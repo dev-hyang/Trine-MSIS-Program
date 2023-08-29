@@ -9,7 +9,7 @@ Q1: Definition:
 attribute/relationship inheritance means that the subclass of a superclass would inherits all the attributes & relationships from the superclass.
 Benefits:
 1. can remove data redundancy, therefore, avoid data inconsistency to some extent
-2. can save a lot repeated works when handling participating relationships between some classes with the superclass to its subclasses.
+2. can simplify human efforts on designing and maintaining complex participating relationships between some classes with the superclass to its subclasses.
 3. can save database storage space
 For example, if you have an employee entity type with attributes (employee_name, employee_age, employee_gender, employee_dob, employee_department, etc);
 you have a new entity type called manager, with almost same attributes from the employee type. If we don't use inheritance, then we might define these repeated attributes in the manager entity type.
