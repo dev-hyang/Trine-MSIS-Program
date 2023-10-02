@@ -1,5 +1,5 @@
 # Present Topic - Query Optimization 
-## Subtopic: How to write an elegant sql query statement?
+## Subtopic: How to write an efficient sql query statement?
 **Goals**:
 1. prune to bugless
 2. time complexity efficient
