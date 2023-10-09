@@ -7,7 +7,9 @@
 * **Audit Trail**: it specially refers to the system logs that serves for security/auditting purpose
 
 # Discuss the types of privilege. What is meant by revoking a privilege?
-The privileges are categorized as below:
+The account level privileges are for account itself, including CREATE SCHEMA/TABLE/VIEW, ALTER/DROP/MODIFY/SELECT privileges
+
+The relation level privileges are categorized as below:
 * **SELECT**: it means certain users have retrieval/read privilege on a relation
 * **Modification**: it mainly refers to certain users have inserting, deleting, updating privileges on a relation
 * **References**: it means certain users have reference privilege on a relation when it specifies some contraints, like foreign keys etc
