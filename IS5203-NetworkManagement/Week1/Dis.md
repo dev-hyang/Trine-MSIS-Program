@@ -1,10 +1,10 @@
 # What is a real-life example of how layers in a system indirectly connect two entities (such as a person or company) in communication?
 In the earlier days, the process of placing food orders at restaurants was a manual affair. To illustrate this, we can draw the following analogies:
-**Browsers**: These are akin to the customers visiting the restaurant.
-**Messages**: Represent the orders placed by the customers.
-**Operating System**: Can be compared to the role of the waiters at the restaurant.
-**Hardware**: Refers to the physical restaurant facilities, including items like order notes.
-**Server**: Corresponds to the cook responsible for preparing the dishes.
+* **Browsers**: These are akin to the customers visiting the restaurant.
+* **Messages**: Represent the orders placed by the customers.
+* **Operating System**: Can be compared to the role of the waiters at the restaurant.
+* **Hardware**: Refers to the physical restaurant facilities, including items like order notes.
+* **Server**: Corresponds to the cook responsible for preparing the dishes.
 
 When customers arrived at the restaurant, they would be seated and patiently wait for a waiter to attend to them. Once seated, the waiters would present the customers with a menu of recipes. When ready to order, the customers would signal the waiters, often by waving, indicating their desire to place an order. The waiters would then jot down these orders on paper notes. Subsequently, they would convey these order notes to the kitchen and inform the cook of the dishes to be prepared. Throughout this process, all parties involved adhered to specific rules. For instance, both the customers and the waiters had to use the same recipe menu and dish names to ensure that the cook understood how to prepare the ingredients and cook the dishes accurately.
 
