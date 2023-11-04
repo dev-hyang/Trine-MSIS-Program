@@ -14,3 +14,22 @@ Could you help to confirm below questions about the Part 2 assignment:
 
 
 # SMART Goals (Due 11/09/2023)
+## References
+1. https://pressbooks.palni.org/graduateinternship/chapter/chapter-1/
+
+* S(Specific)
+> focus on a particular aspect of performance or task, determine how you will accomplish these goals
+
+* M(Measurable)
+> determine at least two indicators that demonstrate a goal has been achieved. Consider quality, quantity, timeliness, and cost
+
+* A(Achievable)
+> in order for something to be achievable, it needs to be realistic, e.g., if you want to learn new software but do not have access to the software, that's not achievable.
+
+* R(Relevant)
+> Set a goal that is relevant to your job. Recognize the professional benefits for achieving the goal
+
+* T(Timed)
+> Set a completion date for the SMART goal within the next six months
+
+
