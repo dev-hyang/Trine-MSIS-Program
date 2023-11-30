@@ -21,3 +21,7 @@ It's noteworthy that all three of these distributions are founded on the Debian 
 ## References
 Bosko, M. (2023, Feb 1). CLI vs. GUI: What Are the Differences? *phoenixNAP*. https://tableplus.com/blog/2018/08/cli-vs-gui-which-one-is-better.html
 Taylor, B. (2020, May 18). To start talking about different distributions, I think it's important to first preface with a reminder [Comment on the blog post “Explain the different popular Linux distros”]. *DEV*. https://dev.to/ben/explain-the-different-popular-linux-distros-fh7#comment-p5p1
+
+# 2
+1st Reply to Weixiao Sang
+2nd Reply to Shenghui Wu
