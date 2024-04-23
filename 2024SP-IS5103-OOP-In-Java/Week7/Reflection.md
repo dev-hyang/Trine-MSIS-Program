@@ -1,0 +1,24 @@
+This reflection aims to provide insights into my learning experience with Java programming, offering valuable perspectives for others embarking on a similar journey. Specifically, I will address the ease of understanding the presented programs, the accessibility of relevant information, the acquisition of necessary knowledge, the application of course concepts in programs, and the challenges faced with implemented solutions.
+
+Understanding Programs:
+Building Program I and Program II in week 3 and 5 respectively was a pivotal part of my learning journey. Program I delved into the fundamentals of program compilation, while Program II was a more intricate task involving the creation of a program to display course grade statistics. Both programs were enriched by consulting the course textbook, which provided essential terminology, knowledge checks, and practical code snippets. Additionally, external tutorials, particularly videos, played a significant role, offering hands-on practice and insightful lab lessons. The combination of textbook guidance and external resources ensured a comprehensive understanding during the completion of program assignments.
+
+Knowledge Acquisition:
+Obtaining the knowledge required to write and compile programs involved a multifaceted approach. The course textbook served as a foundational resource, covering theoretical aspects and providing code examples. External tutorials, especially videos, proved invaluable by offering practical demonstrations and real-world applications of concepts. The synergy between these resources facilitated a robust understanding of Java programming principles.
+
+Application of Concepts:
+The programs developed effectively applied concepts learned in the course. For instance, in the program I, I not only elucidated the Java compilation process through a diagram but also implemented classes and methods to convey fundamental Object-Oriented Programming (OOP) concepts. Furthermore, the program II showcased the practical application of concepts such as ArrayList, Stream, and Lambda expressions.
+
+Challenges and Solutions:
+While the course design and schedule, along with the resources provided, were commendable, challenges inevitably arose. A notable challenge in the early stages was grappling with concepts like classpath, package, and source code location. The perplexity peaked when encountering the "NoClassDefFoundError" in the command line. A thorough examination of the exception details and insightful blog comments, particularly from stackoverflow, illuminated the root cause. Correcting class fullname and understanding package structures became pivotal, leading to a valuable debugging experience. This encounter not only rectified immediate issues but also bolstered my confidence and skill set, proving invaluable in subsequent lab assignments and real-world applications.
+
+Lambda Expressions Review:
+Lambda expressions, introduced in Java 8, present a robust feature offering a succinct syntax for crafting anonymous functions. They contribute significantly to code readability and maintainability by enabling the expression of single-method interfaces (functional interfaces) more concisely. Particularly in the realm of Java programming, Lambda expressions play a pivotal role, especially when paired with the Stream API, in simplifying code and amplifying its expressiveness. In the development of Program II, I seamlessly integrated Lambda expressions within the Stream, thereby not only streamlining the code but also elevating its readability and comprehensibility.
+--<<screenshot here>>
+
+In conclusion, navigating the intricate landscape of Java programming involves a combination of structured learning, external resources, and hands-on application. Challenges are inevitable, but with a resilient approach and access to diverse learning materials, the learning curve becomes an enriching experience. The inclusion of Lambda expressions in the Program II assignment exemplifies their utility in simplifying and enhancing code readability, aligning with the recommendation to use lambda expressions judiciously, accompanied by good comments, for improved code maintainability. The dynamic interplay between theoretical knowledge and practical application sets the stage for a comprehensive and confident grasp of Java programming concepts.
+
+
+# References
+NilsH. (2013, April 27). You have put your class in a package called chapter6. This means that the java file should be in a folder called [Comment on the blog post “ClassNotFoundException when running in Command Prompt”]. Stack Overflow. Retrieved from https://stackoverflow.com/a/16248985
+Singh P. (2023, June 8). Java 8: A New Era of Programming with Lambdas and Streams. Medium. Retrieved from https://iampravo.medium.com/java-8-a-new-era-of-programming-with-lambdas-and-streams-cd9b31a23aa5

@@ -1,0 +1,725 @@
+one
+hey welcome back everybody or not
+welcome back this is week one up in the
+air podcast Dr Brandon McIver and I have
+my great guests
+cyber defense
+extraordinaire Professor extraordinaire
+my man Andrew how you doing man how you
+doing I'm doc how you doing man I'm
+doing good man you know we share that
+Philly uh excuse me that PA that PA
+Pride you know Andy you know he teaches
+in Philly he grew up uh right outside of
+Philly uh we share that and um before we
+get started I just want to thank you for
+ending my career with a bang man
+um what you what you and your team did
+right was amazing and the fact that it
+was a Pennsylvania Squad it meant the
+world to me
+um
+because you know every all good things
+come to an end so
+um you know I I joke and we call
+ourselves Legends right because we
+pulled something off
+um in in my air Operation Center that
+nobody had ever done
+um before they did it before but it
+wasn't it wasn't as good it wasn't
+smooth it wasn't documented it wasn't
+real world we did it right
+um we did it right this time so with all
+that being said I brought Andrew on the
+podcast because he is an expert in this
+area there are very few cyber Defenders
+on the planet
+you heard me there are very few cyber
+Defenders on the planet there's a lot of
+cyber security Bubbas but there are very
+few cyber defense
+guys
+what do you think Andrews
+I I'm sure a lot of people claim to be
+cyber defense because I'm being blue
+teams all the time but whether they are
+or not
+I don't know but I think you're probably
+right I think more people think they are
+and they're really not
+yeah so so here's the funny thing right
+um I was Deputy CIO right since I've
+retired I've been Deputy CIO I've been
+an infrastructure manager and I was the
+top security Guy where I was right and
+the first thing I learned is that you
+gotta have there's no shame in being
+cyber security right you got to have a
+cyber security program right
+um because bad cyber security programs
+are like guys like Andrew will show up
+right and he'll go uh let me see your
+logs and guess what again
+yeah logs what's that or or we don't had
+a space on our on our uh on our sand to
+store our logs okay uh let me get your
+network uh baselines
+what do you mean I I'm a I'm an admin I
+know the Baseline of my system and then
+you just kind of face palm and you go
+you call your family and you're gonna be
+like look uh I was only going to be out
+here for about five days but it looked
+like it's gonna be about three weeks
+right or eight eight let me see your
+infrastructure drawings let me see your
+let me see your network maps and they're
+like 20 years oh yeah yeah yeah we got
+something from like seven years ago and
+I'm like what change control
+configuration oh version three you're on
+12 you're right it it's crazy right
+right and and I think that happens
+Andrew because
+the value of cyber security is is a lot
+of firms try to get away with using
+their Network guys their infrastructure
+guys and make them security minded
+right and they call that a cyber
+security program but the reality is is
+option security or juxtaposed they are
+meant to be different and separate in
+every way you need a group of paranoid
+people right to keep you out of trouble
+right
+you need to vote uh budget and Personnel
+to that because sure you know Network
+folks Network admins they can do a
+certain level of security but you need
+dedicated people to to be on a 24 7 365
+or else Something's Gonna Fall for the
+cracks right but I think like you said I
+think a lot of companies want a penny
+pinch and they don't invest in security
+when they should
+right and and security is expensive
+right so so one of the things I try to
+tell folks is like hey everybody doesn't
+need a Lamborghini for a security
+program right
+um You need a security program that fits
+your organization that fix fits your
+budget so if you're dealing with like a
+low budget organization right
+um and they needed to build a cyber
+security program well what do you think
+well I mean uh you don't need I mean
+there's open source tools out there and
+free free tools they can use they don't
+need to buy the latest and greatest the
+new hotness uh tool that's gonna you
+know solve other problems it doesn't
+really exist it's silver bullet that we
+joke about inside right it doesn't
+really exist there's certain tools out
+there that help but no one no one tool
+is going to solve all your problems see
+you no matter how big or small your
+Enterprise is you'd have to devote time
+energy and of course money to your
+security program or else you're gonna be
+the next person on the news that got
+breached and your customers generally
+speaking so you just gotta sometimes
+just
+understand that there's there's going to
+be times where you're gonna you're gonna
+need people and it's gonna take some
+investment right yeah whether you're big
+or small doesn't matter or anywhere in
+between yep so so one of the things um
+isc2 is is teaching uh this the special
+isc2 cissp Club you know uh one thing
+they're teaching to us is you know how
+to how to bridge that how to make that
+relationship with the CFO right
+um because that's going to be kind of
+your best friend as you go to
+characterize
+the cost of cyber security meaning the
+cost of doing cyber security versus the
+cost of not doing cyber security and I
+think Andrew that's what you were kind
+of hitting
+yeah it's funny you mentioned that
+because I have my freshman students
+where I teach at Drexel I created a
+assignment
+um where I had them write the CFO memo
+saying we need to implement these
+security measures because of you know
+XYZ and it's just it kind of kills two
+birds one stone because they're they're
+relaying they're not in cyber and cyber
+defense to see if it was to make you
+know money decisions uh Chief Financial
+officers make money decisions and
+they're also being brief because he's
+he's
+he or she is a c-sui you know um level
+executive they need to understand the
+facts and as brief a memo as possible so
+I'm having them develop their
+professional I guess communication as
+well as relaying hey we need these
+controls or else we're open to these
+vulnerabilities and this is why you
+should invest in US my team
+so so here's the thing man that's a
+great assignment right because one of
+the things that get lost in bachelor's
+programs and Master's programs is hey if
+you're getting a bachelor's degree or a
+master's degree in I.T and or cyber
+security you're not going to really have
+your hands on the keyboard right uh guys
+who have their hands on the keyboard
+they have no need for college right they
+are artists they're Craftsmen they're
+Architects right they're not going to be
+in college per se right they're
+operators right they're going to get
+their skills vocationally so I think
+that's really important executive
+communication is important right
+um so so the reason why I wanted to have
+this talk with you is the students are
+going to figure out here in a couple
+weeks I go on a classic rant about
+incident response and everything that's
+wrong
+man I am the best Rancher ever um Peter
+Griffin is probably the only person that
+could rant harder than me
+um but I did this huge rant and students
+it's going to be great you're going to
+love it um you know the angry the angry
+I.T executive right
+um but the but the thing is is I've been
+through incident response as a
+one-strike person with like no with like
+20 I'm 21 years old and or 20 when I had
+one stripe I was like 2019 but I've also
+been a part of it as a dog on a flight
+Commander where I got so many people and
+so many opinions that I got to tell
+everybody like hey everybody be quiet
+you know just you know be be nice on
+YouTube right and um and let's talk
+about this objectively right everybody
+stop protecting yourself it's already
+happened right we've already stepped in
+poop right that's what we need to do but
+one thing I've noticed is is sometimes
+the problem's been real big and I'll ask
+my boss I'm like yo we need to bring in
+cyber Defenders
+we got uh two cissps and five people
+with Security Plus what do you mean we
+got cyber Defenders I'm like nah you
+have no idea
+um Andrew what's a cyber Defender
+so uh let's pick that apart a little bit
+so let's unpack it um cyber right so the
+rental cyber obviously we're dealing
+with the electronic communications
+things of that nature and Defender to me
+that means it's synonymous with
+protecting something right so you're
+protecting cyber right you're protecting
+the network and the assets and points on
+that Network
+um so I'm not sure I'll just an operator
+a business professional whatever it may
+be his soul goal or one of their goals
+on their job is to defend and protect
+the assets they're trying to safeguard
+on that Network
+no yeah real simple right
+um and and let me make it let me make it
+practical right for the least common
+denominator check this out Andrew me and
+you somebody put a price on our head
+right we could hire security
+or I could hire Defender
+what's the difference
+this analogy okay so this metaphor
+someone's putting a head hit out on you
+and you want to hire security or
+Defender
+right um
+what you think
+I've never heard anything freeze it's
+quite like this and you know trying to
+create a metaphor for what we do
+um
+is this a trick question
+it's not it's not right so so it's not
+right so so I I see it as a I see it as
+a put in a security system on your house
+right a really good security system
+um you could have a security response
+that goes along with that security
+system you can hire a security guard
+with a gate you could put a moat around
+your house right these are all security
+type of things however when them boys
+come come by like you know you ever see
+Scarface or you ever see like a old
+movie when the boys come to get you and
+they start jumping the gate where they
+they they come to Ram the drawbridge
+right and they you know you need people
+who are going to take up bow and arrow
+you're gonna need people to shoot back
+you're gonna need to defend the area not
+just run security right and it's not
+minimizing cyber security because door
+locks are meant to keep honest people
+honest right but if there's a cat
+burglar you're gonna need a little bit
+more right so if you got the Crown Jewel
+in your house right and it didn't mean
+anything by that you're gonna hire a
+black suit guy with the glasses that's
+got a pistol got two side arms that's
+going to be standing in front of the
+crown jewel versus just having a really
+good security system so that's kind of
+that that's kind of how I measure it
+right
+um yeah I see what you're trying to do
+you try to differentiate between cyber
+security and defensive cyber security
+right yeah there's the difference yeah
+yeah and and think about cost too right
+um one of the ways you save money is by
+putting in a really really good security
+system versus hiring somebody to defend
+something and that's why we're like I
+need to bring cyber defenders in hey you
+guys aren't cheap right
+um you know how big do you think is a
+good cyber defense team
+depends on the environment you're
+working in right
+um
+I mean my team as you know was probably
+10 or 12 strong but we were dealing with
+a lot of endpoints and yeah
+different enclaves things like that so
+we needed the Manpower
+um but it could vary I think I think the
+short answer is it varies depending on
+what your permission is what your goals
+are how many endpoints or you know hosts
+are on your network
+so I think you can get away with maybe a
+team of three to four with one of those
+being the kind of leader of of the group
+or all the way up to a security
+operations center which could be dozens
+depending on how large your company is
+copy
+um what are some of the roles
+um that are that are in a cyber defense
+team that's different than a cyber
+security team
+so you can go like two ways with this
+you can go hosts and you can go Network
+so your host analysts are going to be
+the ones focused more on the endpoints
+themselves right the the workstations of
+the employees so to speak right so
+they're going to be looking for things
+on those hosts on those endpoints they
+look kind of odd look at a place whereas
+Network operators network security
+analysts maybe you're looking for things
+across the wire that are going between
+these endpoints that doesn't look quite
+right they're more focused on the I
+guess the bigger picture uh you know
+macro versus the micro of the hosts so
+uh two different negative career paths
+you can go my my opinion is post
+security or network security within say
+a security operations
+and then of course you have your
+management levels and things like that
+so there's a lot that goes into it of
+course but for uh for fully functioning
+stock to operate you need both the doers
+and the overseers of the doers perfect
+perfect so so let's get to why we're
+here right
+um you know what was really cool is I
+never really understood the difference
+between cyber security and cyber defense
+tools right
+um because I always thought cyber
+defense tools could be employed by cyber
+security folks until yet ncoic
+non-commissioned officer in charge he
+tapped me on the shoulder right he got
+the big he got the big old ncoic
+mustache tell them I said that man it's
+classic
+um and he goes he goes captain
+I'ma save your life
+and I go talk to me he said Security on
+you
+he said it's free he said it's free and
+he said you'll be hard-pressed to find
+something better than it
+and I went okay and I've been toying
+around with security onion ever since
+and the way I see it one second
+so security Union right
+um security onion to me is like
+is like the Kali Linux on the blue side
+yeah right yeah it's like a suite of
+tools right that if you could actually
+learn how to use them you'd be dangerous
+so that's why I just brought you one
+right because I I consider you kind of
+an expert to bridge the gap between
+those two things talk to me a little bit
+about you know cyber defense tools
+versus cyber security tools and if
+there's any touch points
+I'm glad you brought up a comparison of
+Kali Linux because catalytics comes with
+like 600 plus tools most of which are
+designed for uh you know pen testing red
+team offensive security right so
+um whereas you know security Union
+there's a suite of tools mainly geared
+towards the defense so protecting again
+protecting the network and the assets
+within it so
+um I think we'll start let's back it up
+to the definition of cyber security
+versus defensive cyber again it's a
+cyber security
+that large category that a lot of things
+with offensive defense and fit into
+defensive obviously being the protection
+or prevention side of the house you're
+basically using the defensive tools to
+prevent protect or you know limit risk
+data loss you name it right that's
+that's where the defensive schools come
+into to play so you're using those tools
+essentially to limit the chances that an
+attacker have at getting what they want
+which is either access to your network
+information within it maintaining
+persistence on the network meaning they
+have a you know a long time to play to
+have access to that Network escalate the
+privileges so on and so forth right you
+want to prevent that from happening so
+what do you do right you have them in
+firewalls you implement IDs IPS
+intruding detection Protection Systems
+so you have rules that'll alert you it's
+a nefarious activity or the rules
+that'll actually prevent that activity
+you want to demand ACLS or Access
+Control lists all the things in a
+defender's toolbox to help prevent
+person or that entity from getting
+access to unauthorized access that's a
+key word right to your network and and
+the things within it
+so that's just to differentiate set the
+stage for difference between cyber
+security tools and defensive cyber pools
+draw that Line in the Sand right
+perfect perfect uh you want to jump into
+like defensive tools
+yes I mentioned a few IDs IPS so uh just
+to go you know security onion there's a
+tool called Suricata  security onion that
+is an IDs IPS so again you can write
+rules you can write rules and I for
+example certain IP addresses so they'll
+either be blocked
+um in an IPS case or it'll be alerted in
+an IDs case
+um so that way a network Defender can go
+look into that activity further
+investigate hopefully it's it's nothing
+but if it's something then we'll look
+further into it and do an investigation
+but the intent is right that you're
+trying to stop things from from having
+stop stopping bad as we call it that's
+just something we have right something
+bad from happening
+um because if that does happen then you
+have to deal with it right in the form
+of ir instant response
+so um again the intent the goal of
+network Defenders is to prevent
+bad things to happen from happening on
+their Network and that's why they're
+using their tools firewall is actually
+going to filter traffic and block block
+traffic that is deemed Unworthy of
+entering the network in the first place
+or traversing it in the first place
+um ACLS are going to
+um as the name implies Access Control
+lists those are going to either deny or
+permit access to certain vlans or
+network for example virtual local area
+networks and you can set those up on
+routers so you know echoles can be
+silicon routers
+uh let's see what else do we have uh
+what about what about like um
+elasticsearch and uh log aggregators
+like to talk to me about like when you
+respond to an incident right when IDs
+and IPS isn't working when firewalls
+seem to not be there that maybe there's
+a threat low low and slow right what are
+some of the tools you you use to remove
+somebody to to detect inspect detect and
+remove somebody from the network
+yes that's a great point right so I want
+you to text an indicator compromise once
+you know that there's something not that
+shouldn't be something that's on your
+number that shouldn't be you have to
+clear or remove that activity right so
+you I mean that it all depends on what
+you find but if you come in in a flavor
+of you know
+um you know cutting ties to a certain IP
+address that is beaconing out and that
+Beacon is sending information out to a
+potential apt for example advanced
+persistent threats so you could you
+could basically block or Blacklist that
+IP address for example which is only a
+temporary fix because IP addresses we
+know are not necessarily static so they
+could just circumvent that by by using
+another IP
+um but there's certain you know certain
+indicators of compromise you can look
+for that are known
+um in in the field going to be Intel I
+think you've had you know you got you
+had Professor napolon he could probably
+go into this better than I because he's
+more Intel minded but you can look for
+certain things on your network that have
+been seen in the wild before
+by by the Intel community and if you
+find them you remove them right you
+remove files that shouldn't be there you
+remove those IPS and shouldn't be like I
+mentioned
+um and you clear you clear the activity
+but there's a kind of a fine line
+between when you should do do the
+clearing actions and when you shouldn't
+because sometimes you may want to keep
+them on your network and monitor and
+kind of see what they're up to right if
+you want to get Intel gain you might
+leave them there for for a little while
+assuming they're not doing anything so
+detrimental to your network that is uh
+basically you can't come back from so
+there is there is a time where you need
+to ask yourself should we just watch
+what they're doing before we clear their
+activity or do we just clear right away
+and get them out as soon as possible
+so so you're one of the cool people in
+the world that does Cyber defense hey
+what about the movies right where the
+hackers on the network and then the
+Defenders are like oh I just saw them
+run to this IP address let me
+I'm gonna get them right there and and
+you know what I tell people yeah yeah
+yeah so what I tell people is like some
+of that stuff is true and some of that
+stuff isn't true right so like so like
+sometimes like you said you can see
+something beaconing or sometimes you can
+see a file not a service not behaving
+right or or sometimes like
+I I don't know but there's certain
+indicators that you can see where you'll
+actually see like an active attack like
+you said you're watching somebody so I
+tell people there's a shred of Truth in
+that right but it's never as interesting
+and dynamic as you think right like it's
+it's their ex-filter they're they're
+taking data out you find out where
+they're taking data out right you block
+it and then like
+two days later you'll see that they
+moved around so you're like okay they
+got access here and here so let me look
+at the hacker methodology it means I
+need to check out this this and this
+because the only way they can get from
+point A to point D is that they had to
+do at least B or C right they begin to
+give themselves away and then they give
+away deeper accesses so like there's a
+shred of Truth in it but have you ever
+had any like cool moments where you're
+like yo I got a legit bad guy in here
+and I need to save you know company X
+from going down
+unfortunately not it's how Hollywood
+portrays cyber security and hackers
+quote unquote as like in a dark room
+they type in a mile and on the keyboard
+and immediately getting into a system
+like without any type of reconnaissance
+or you're going through the the kill
+chain right somehow that like Hollywood
+has portrayed this in a way that is
+unrealistic in most cases I should say I
+don't know in other things but
+um in my experience however I've not
+found anything that's been like whoa
+this is you know this is all level the
+National Security concerns or and I
+guess I should say that this is a good
+thing I had not found this because
+my my job would be a lot harder in our
+country and the companies I work for
+would be a lot more trouble but uh
+suffice to say a lot of what I do is
+process oriented it's team oriented it's
+it's slow moving but it's methodical and
+and very um well well oiled and you
+follow a process because that process is
+tried and true and you're not doing the
+Wild Wild West by typing away the
+keyboard going rogue and creating
+effects on the network that you didn't
+intend to create right the last thing
+you want to do is going to protect and
+defend and you've now done something
+actually only or otherwise that has shut
+you know shut down part of the network
+or break the box or something so yeah
+um in my experience I say it's boring
+but it's it's just a process right and
+you rely on your team because no one
+person can do it all no one person knows
+all the tools and it takes a village so
+yeah cyber cyber is hard right right I I
+was the OIC for the one of the Premier
+hacking units in the entire world right
+I was an apt right it just yeah a good
+guy or a bad guy it depends on who's
+talking right I was in the APT and let
+me tell you something it's boring it's
+hard right and you know the advice that
+I give people is opsec and cyber hygiene
+are worth their weight in gold they're
+bigger than any detection or protection
+tool
+opsec shut your mouth right like stop
+mixing your personal with your work
+right and good hygiene if you see it and
+it doesn't look right don't click it
+right some emails uh if they're you you
+know what if you get enough emails that
+becomes easier and easier right because
+hey if this email is worth it somebody
+will send it twice I'm not saying I do
+that but I am saying I do that from time
+to time right like it needs motivation I
+need to see how bad you know you want it
+right so I'm gonna say no just to say no
+and and see what you come back with
+right just cyber hygiene right like no
+no being only being on the red side of
+the house I learned that cyber hygiene
+and and cyber hygiene is user Behavior
+it's admin Behavior admin Behavior right
+patching uh scanning uh stigging right
+like my first question with cyber
+security people is I ask them if they
+know what a Stig is
+and if they say no right if they say no
+it goes in my box that this isn't
+necessarily A prepared
+like they they don't live in a world of
+preparedness because stigs are a pain in
+the behind but if you Stig a system or
+hardening right if you harden a system
+that's real to me that's real cyber
+security skills right we may not need to
+call you in Andrew if we're sticking
+right like if we're if we got stigs and
+a good patching program are worth their
+weight in gold right so man and it was
+good to have you on man
+um
+you know
+man I wish we had more time I'ma
+definitely get you on another one of
+these I know you gotta go out of town
+but man it was great to have you um
+trying as lucky to have you the students
+are lucky to have you hey look this man
+up right uh the world is run by uh those
+who show up the world is run by those
+who speak up and the world is run and
+you get put in position to Run the World
+by the relationships you know so one
+thing I always tell Shannon brother is
+the good thing about having an adjunct
+faculty is that we still in the mud
+that's right we're still in the mud
+right we're not sitting in a lab and
+reading books and building curriculum
+right and and talking about the good old
+days nah we're still in the mud right
+and um man I appreciate you you know
+taking time out of your day
+um I know you're on East Coast time so
+thank you
+um any any last words we got about 30
+seconds left uh on the time hack what
+you got no I mean I just want to shout
+out to you for for running these
+podcasts and thank you for inviting me
+on one that's it's been a pleasure and I
+appreciate my time and trying and it
+wasn't for you I wouldn't be here at
+trying so thank you for that and um kind
+of just to wrap up what you said at the
+end there cyber security and cyber
+defense can be boring but it's
+absolutely essential so
+um don't sleep well
+that's right all right my man take care
+I'll see you around all right
