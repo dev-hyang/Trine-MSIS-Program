@@ -1,0 +1,28 @@
+# Week1_discussion_hang
+
+## Def or intro
+The textbook content covers four main types of system engineering theories/approaches:
+1. System Development Life Cycle Approach (SDLC): It turns to be the conventional and most-used pattern. It usually categorized into seven coupled phases. Each phase has its own scope of work and outcomes which could be the inputs for next phase. Documentation and communication play an important role in the whole development process. Therefore, you can choose SDLC approach if your project needs detailed documentation or communication-centered.
+2. Agile approach: it's called Scrum or adaptive/iterative development sometimes. This approach is a good fit for dynamic requirement business. It does not require a one-time product but keep the prototype and product better and better through each sprint/iteration. A common practice of Scrum takes two weeks or four weeks per sprint. Each sprint would record the user stories based on the scrum team's capacity.
+3. Object-Oriented Approach (OOA): the approach highly releted to the popularity of modular system programming and object-oriented programming. The unified modeling language (UML) is the most popular toolkit for OOA developers. It contains different types of diagrams, like class diagram, user case diagram, sequence diagram, etc to illustrate the relationship between each other and help to identify the boundaries for each sub modules into the whole system. In my viewpoint, this approach could be quite helpful for both tech and non-tech team members to understand the system in a graphic or diagram view.
+4. Cloud Development Life Cycle (CDLC): it utilizes the latest cloud computing capabilities to empower the business into next stage, like Software as a service (SaaS), Infrastructure as a service (IaaS), and Platform as a service (PaaS). The cloud was claimed to excels in deployment and security concern, as well as cost-saving in maintenance compared to the traditional SDLC sponsored by physical server center. Also, it's said to bring benefits to a large group of businesses, from small business to cross-state companies. Oganizations could choose and subscribe their desired cloud service which could be on demand or reserved based on different use cases. However, there are arguments as some big company recently struggles in paying the debt and irretional contract with cloud providers, like AWS, Google Cloud, Azure, etc.
+
+In my current work environment, we utilize bi-weekly sprints to implement incremental features and maintenance requirements for our system users. While this approach has its advantages, it’s not without challenges. We occasionally face priority conflicts and unexpected urgent or ad-hoc tickets that disrupt our planned work. Additionally, poor documentation can lead to miscommunication or a loss of knowledge, especially when team members leave.
+
+To address these issues, we’ve implemented several strategies. For instance, we now require developers to document at least the main features or designs for significant projects, while minor enhancements may have less stringent documentation requirements. We also work to balance the time spent on development, testing, and retrospective meetings, and we’ve made a conscious effort to reduce or eliminate inefficient meetings, such as pre-planning sessions that don’t yield actionable outcomes.
+
+I’m curious about your experience. How do you and your team handle these challenges in Agile or other development approaches?
+
+
+References
+Lynn, R. (n.d.). Disadvantages of Agile. Planview. https://www.planview.com/resources/articles/disadvantages-agile/#:~:text=The%20fact%20that%20Agile%20requires,%E2%80%9Cfinal%20product%E2%80%9D%20looks%20like.
+
+
+## Replies
+1. by Shilpa Mankala - Wednesday, August 21, 2024, 6:52 PM
+Thank you for highlighting the critical role stakeholders play in the project development life cycle. However, I believe that effective communication between stakeholders and the development team is even more crucial in this context. System analysts play a key role in bridging this gap, ensuring that both sides are aligned and that the project progresses smoothly.
+
+System analysts not only help to demonstrate the system's capabilities and potential to stakeholders, showing how it can be leveraged to gain a competitive advantage, but they also translate business requirements into user stories. These stories can then be broken down into smaller, implementable tasks or modules for the development team. This dual role is why exceptional system analysts are highly regarded and in such high demand.
+
+2. by Navya Kollu - Wednesday, August 21, 2024, 11:13 AM
+This is a great wrap-up of Chapter 1, especially in addressing the concept of system engineering processes, key factors. Regarding adaptive requirements, which is so prevalent in the real world. Here are some of my personal thoughts on the topic. Different business domains may require different solutions, but I believe the Agile/Scrum approach is particularly effective for managing change. In the Scrum development lifecycle, changes in requirements can be addressed at any stage—whether in the early planning phase, during development, or before release. Whenever a new requirement arises, it can be added to the backlog, prioritized according to its urgency, and then incorporated into the next sprint during the planning meeting. While traditional waterfall development also incorporates change management strategies, such as ad-hoc or patch releases, these typically take longer to implement compared to the more flexible and responsive nature of Agile/Scrum.

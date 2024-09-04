@@ -1,0 +1,30 @@
+#1 Quizs
+1. ___Enterprise_____ is intended to mean a large undertaking, especially one of large scope, complication and risk(10)
+2. A ___System____ is an arrangement of parts or elements that together exhibit behaviour or meaning that the individual constituents do not.
+3. The term __Engineering_____ is derived from the Latin ingenium, meaning “cleverness” and ingeniare, meaning “to contrive, devise”.
+4. The retirement of a system happens when the system has reached the end of its useful __Life___
+5. SE Managers must first develop the project Systems Engineering ___Management___ plan
+6. The systems engineer is the primary__Interface_____ between management, customers, suppliers, and specialty engineers in the systems development process.
+7. The first V in "VV" stands for: Validation
+8. An ___Engineered______ system is a system designed or adapted to interact with an anticipated operational environment to achieve one or more intended purposes while complying with applicable constraints.(10)
+9. The __Integrative______ approach has long been used in systems engineering and usually involves either interdisciplinary (e.g. integrated product teams) or multi-disciplinary (e.g. joint technical reviews) methods.(11)
+10. eeee
+
+#2 Week2_discussion_hang
+Discussion Forum 2, Initial Responses, Discuss the importance of modeling techniques in representing organizational systems and the phases of project management in successful systems development. Share your thoughts and ask questions.  (LO3 & LO4)
+
+In my view, it’s difficult to accurately describe the complexity of a system without clear criteria or standards for assessment. The same applies to system analysis and design; without a convenient and efficient method, the process can become labor-intensive, inefficient, and potentially costly. As we learnt from previous chapter, a better way to assess the organization is to view it holistically. Everyone knows that an organization is usually composed of connected internal and external units. But how to determine the boundaries of those subsystems are challenging. They are independent units as function entities, but have interfaces to communicate with each other as a whole. Here comes the modeling approaches. The environments and cultures within an organization are constantly evolving, making it increasingly challenging to model the organization using a single, unified approach. Different modeling techniques have their own advantage over another. The choice of a modeling techniques depend on the scope of your organization problem. For example, E-R diagrams could be efficient to describe the organization as entities and relationships between those entities, as well as advantages in databse design. And user case diagrams help to use simple, understandable programming agnostic language to introduce the interactive features of the information system, usually contextual data flows between actors and the information system. 
+Regarding to the five main steps of project management, they all contribute to the final success of the system development. Initiation of project helps to identifying the problem as detailed as possible. The second step is to check if the project goal could be achieved, including technical, economic and operational dimensions. During the activity planning and control phase, tools like Work Breakdown Structure (WBS) can be used to break down the project into manageable, measurable tasks. Project scheduling becomes more straightforward with the use of Gantt or PERT charts. Finally, assembling and unifying your development team to work on detailed tasks is essential. Throughout all these steps, effective communication is key and can significantly enhance the success of the system development.
+
+I’m aware of several methods to determine the boundaries of subsystems or departments within an organization, such as interviews, questionnaires, and feedback. Which methods have you used, and can you explain why you choose it over another?
+
+References
+Greg. (2021, December 20). UML vs. ER diagrams: A detailed comparison. gleek. https://www.gleek.io/blog/uml-vs-erd/
+
+## 2.1 Replies
+* by Dharma Prashanth Ravipudi - Wednesday, August 28, 2024, 3:29 AM
+
+I completely agree with the point about culture, which is often overlooked by many tech professionals when designing a system. Most current designs focus on improving performance or fixing bugs, with user-friendliness primarily addressed through UI/UX design. However, we need to consider more than just UI/UX; we must also account for cultural sensitivity, especially for global businesses. Even within the same country, people from different regions may be affected by varying local cultures. I believe that considering environments and context-level data flow during the preparation stage of system development is crucial for addressing these cultural factors.
+
+* by Gowtham Muppasani - Wednesday, August 28, 2024, 7:39 AM
+That's a concise and effective introduction and wrap-up for this week's topic on modeling methods and stages of system development. I agree that all components or stages are crucial to the success of a project, but I believe the initiation stage carries slightly more weight than the others. If we fail to clearly and accurately identify the problem at the outset, we risk doing redundant or unnecessary work, and worse, the users may not accept our design or final product. Therefore, having a well-prepared initial idea and prototype is essential for demonstrating value to users. This stage should involve thorough brainstorming to pinpoint key pain points and opportunities. Lastly, it's important to note that use case diagrams, as a powerful modeling tool, can be invaluable in explaining the project to both technical and non-technical stakeholders, aiding in presentation and buy-in.

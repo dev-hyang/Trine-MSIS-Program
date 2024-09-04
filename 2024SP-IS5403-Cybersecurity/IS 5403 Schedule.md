@@ -196,17 +196,17 @@ Week 7: Cybersecurity Capstone: Breach Response Case Studies
 
         Due 4/28/24 Sunday by 11:59 PM EST   
     
-              o   15 Quizzes Cybersecurity Capstone: Breach Response Case Studies (LO6) (LO7) - 150 points
+              [x]   15 Quizzes Cybersecurity Capstone: Breach Response Case Studies (LO6) (LO7) - 150 points
     
-              o   Cybersecurity Capstone: Breach Response Case Studies Course Certificate and Score Submission (LO6) (LO7)   
+              [x]   Cybersecurity Capstone: Breach Response Case Studies Course Certificate and Score Submission (LO6) (LO7)   
     
-              o   Cybersecurity Architecture: Roles & Tools (Presentation) 2:00 (LO6) (LO7) - 50 points
+              [x]   Cybersecurity Architecture: Roles & Tools (Presentation) 2:00 (LO6) (LO7) - 50 points
     
-              o   Cybersecurity Architecture: Identity and Access Management (Presentation) 2:00 (LO6) (LO7) - 50 points
+              [x]   Cybersecurity Architecture: Identity and Access Management (Presentation) 2:00 (LO6) (LO7) - 50 points
     
-              o   Cybersecurity Architecture: Endpoint Management (Presentation) 2:00 (LO6) (LO7) - 50 points
+              [x]   Cybersecurity Architecture: Endpoint Management (Presentation) 2:00 (LO6) (LO7) - 50 points
 
-              o   Week 7 Reflection Blog (LO6) (LO7) - 50 pointsTurnitin Assignment 2
+              [x]   Week 7 Reflection Blog (LO6) (LO7) - 50 pointsTurnitin Assignment 2
 
 
 
@@ -215,11 +215,11 @@ Week 8:  Cybersecurity Architecture Work due by Saturday at 11:59 PM EST
 
         Due 5/4/24 Saturday by 11:59 PM EST 
     
-              o   Cybersecurity Architecture Network Security - Response (Presentation)   
+              [x]   Cybersecurity Architecture Network Security - Response (Presentation)   
     
-              o   Cybersecurity Architecture: Application Security - Response (Presentation)   
+              [x]   Cybersecurity Architecture: Application Security - Response (Presentation)   
     
-              o   Cybersecurity Architecture: Data Security - Response (Presentation)   
+              [x]   Cybersecurity Architecture: Data Security - Response (Presentation)   
 
 
 
