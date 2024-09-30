@@ -1,1 +1,24 @@
 # Discussion
+Summary
+
+When designing a system tailored to an organization's staff, understanding the input and output of the system is critical. For instance, if the end users are hospital doctors, the system should be user-friendly with detailed medical terminology and relevant functionality. Conversely, if the users are flight customers, the design should prioritize ease of navigation, allowing users to browse available flights, compare schedules, and easily make reservations. Information gathering plays a crucial role in shaping not only the system but the business itself. There are systematic approaches to collecting information, which involve organizing, mining, and analyzing data. To enhance the efficiency of this process, information-gathering methods can be categorized into two types: interactive and unobtrusive. 
+
+Interactive methods include techniques like interviews, joint application design, and surveys, which require direct interaction with users.
+Unobtrusive methods do not disrupt the daily routines of the subjects being studied. These include sampling, historical and current data analysis (both quantitative and qualitative), process and task mining, workspace analytics, and observation.
+Among unobtrusive methods, sampling stands out as one of the easiest, most cost-effective, and convenient options. Common sampling types include convenience sampling, purposive sampling, simple random sampling, and complex random sampling, each suited to different scenarios. Using the right sampling method helps reduce bias and improve precision. Beyond the methods themselves, it’s crucial to clearly define your goals and scope before starting the information-gathering process, as it can be a long-term effort. Additionally, selecting the right data storage and analysis tools is important—well-organized data will be easier to analyze, and good analytical tools can reveal valuable insights that guide your final decisions.
+
+Questions:
+
+What strategies can we use to ensure data is protected, and what are the best ways to manage this process?
+How can we verify that the data collected is both authentic and consistent? Are there industry standards or tools available for ensuring data quality?
+References
+Borges, E. (2024, March 7). Information Gathering: Techniques and Tools for Effective Research. Recorded Future. https://www.recordedfuture.com/threat-intelligence-101/intelligence-sources-collection/information-gathering
+
+# Replies
+* by Shilpa Mankala - Wednesday, September 4, 2024, 9:03 PM
+Thank you for pointing out that interactive methods can be an engaging way to build stronger relationships with customers or internal end-users. Beyond the benefits of engagement, however, there are downsides. Interactive approaches can disrupt a person’s daily routine, often requiring appointments and adding complexity to communication and coordination. To address this limitation, combining interactive methods with unobtrusive approaches can provide more flexibility. For urgent or immediate feedback, direct conversation with the subject may be better. Otherwise, scheduling appointments, conducting surveys, or doing sampling can be more convenient. Especially as recent data analytic tool and technique grows, system analysts now have access to increasingly efficient methods for data collection. Tools like web scrapers and ETL (Extract, Transform, Load) pipelines have become essential for automating data extraction, processing, and integration from various sources.
+
+* by Sivaram Alapati - Wednesday, September 4, 2024, 1:42 PM
+It’s great to see feedback on the integrity and consistency of the collected data. You’ve made a valuable point about the importance of carefully handling data gathered from various channels. This data often comes in different formats, such as recordings, documents, webpages, questionnaires, emails, and notes, requiring a structured approach to organize it. Key steps like data cleansing, validation, reformatting, and storage are crucial in transforming raw data into structured, ready-to-analyze points.
+
+As for inspiring people to contribute through interactive methods, it’s challenging but not impossible. A common strategy is sending email notifications to a targeted group, gauging their willingness to participate in a survey or questionnaire. The audience could include anyone with an interest in the system upgrade within the organization. Additionally, offering meaningful appreciation—such as early access to a new product prototype—can be more effective than financial incentives or credit. However, the best approach may vary across business domains, as there’s no one-size-fits-all solution.

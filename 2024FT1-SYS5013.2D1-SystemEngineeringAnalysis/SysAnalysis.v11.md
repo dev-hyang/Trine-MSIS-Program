@@ -1,4 +1,91 @@
+# chp10 OOSAD
+**CRC Card and Think**
+
+CRC Card stands for class, responsibilities, and collaborators. They are used to represent or model a system from an object-oriented perspected and the responsibilities of classes and the interaction between the classes.
+
+## UML and its components
+**things**
+* *structural things*: classes, interfaces, collaborations, use cases, active classes, components, nodes;
+* *behavioral things*: interactions, state machines
+* *Grouping things*: packages
+* *Anotational things*: Notes
+
+**Relationships**
+* *structural relationships*: dependencies, aggregations, associations, generalizations
+* *behavioral relationships*: communicates, includes, extends, generalizes
+
+**Diagrams**
+* *structural diagrams*: class diagrams, component diagrams, deployment diagrams
+* *behavioral diagrams*: use case diagram, sequence diagram, communication diagram, statecart diagram, activity diagram
+
+**UML Most Common Diagrams**: showing how each diagram leads to the development of other UML diagrams
+![UML-diagrams](./imgs/UML-common-diagrams-references.jpg)
+* activity diagram with swimlanes
+
+![activity-diagram](./imgs/activity-diagram-with-swimlanes.jpg)
+
+* sequence diagram
+
+	- *annotations*
+
+		+ **objectName:**: a name with a colon after it represents an object
+		+ **:class**: a colon with a name after it represents a class
+		+ **objectName:class**: a name, followed by a colon and another name, represents an object in a class
+		+ **vertical line**: represents the lifeline for the class or object, when it is created and destroyed ('X')
+		+ **lateral bar/vertical rectangle**: shows the focus of the control (process)
+		+ **horizontal arrows**: show messages or signals that are sent between the classes.
+			* solid arrowhead means sync calls
+			* half/open arrowhead means async calls or those without return (void)
+		![sequence-diagram](./imgs/sequence-diagram.jpg)
+* communication diagram: represents the organization with same information from sequence diagram
+![comm-diagram](./imgs/comm-diagram.jpg)
+
+* class diagram
+
+
+# chp6 Agile
+1, Agile can definitely improve efficiencies in several domains compared to waterfall SDLC. Some of its variants also called iterative/adaptive development, which can include adhoc or urgent needs in the sprint/iteration without pending on the long-term waterfall phase 1 completion before starting on phase 2 features. Waterfall model sees the whole system as one single unit. Each step in the waterfall model rely on prerequisite steps to be completed or accepted. If any changes needed amid the process, you will need downtime to finish previous tasks and then start from the 1st step again. This is not flexible, time-consuming and low efficient. Agile comes into solving the pain points from the traditional waterfall model. It decompose the whole tasks into small user stories/delievrables/functionalities/microservices/phases which could be deployed on the go or developed independently. Theretically, that means you can start any new tasks without dependency on previous tasks if they are not co-related. Agile method also does not require any specific time frame or downtime to deploy the changes. To wrap up, agile is aiming to shrink the downtime, planning time and make your new ideas implemented as soon as possible to gain more advantage in latest market.
+
+
+# Chap7 Data flow Diagram (DFD)
+It's developed around 1970 to help software development. It could clearly define the system input and system output as well as where its flows and where it would be stored. This can definitely help the system analyst or system architect to design how the system looks like or how the data would flow in the system. Two types of DFD notation:
+1. Yourdon & Coad
+	* more convenient in system analysis and design tasks
+	* processes are noted by Circle
+2. Gane & Sarson
+	* more common for visualizing information systems
+	* processes are noted by Square with round corner
+3. Terms
+A process means the procedure step to transform input data into output format.
+	* ![process-img](./imgs/process.jpg)
+A datastore is a storage unit of data in the system, usually are files or databases
+	* ![datastore-img](./imgs/datastore.jpg)
+A data flow is a pipeline with data flow into it from source to destination. Usually it's associated with arrow(direction)
+	* ![dataflow-img](./imgs/dataflow.jpg)
+A external entity is an interactive object that's outside of the organization/system. They are usually the root sources and final terminals of the data inputs and outputs. Sometimes we called upstream, downstream systems.
+	* ![external-entities-img](./imgs/external-entities.jpg)
+A level/layer in the DFD is an abstract concept to categorize some aggregated data flows which are correlated with each other.
+Context diagram is usually called root level or top level or level 0 data flow diagram. It only contains one process node that is an overview of the whole system in relationship to external entities. From then on, can go to detailed data flows for each function level by level, detail more detailed until the pseudocode.
+
 # Chp5 Unobstrusive methods for info gathering
+This chapter covers unobstructive methods for info gathering, including sampling, investigation of quantitative and qualitative data in current and archived forms, process and task mining, workspace analytics, and observation of the decision maker's activities through the use of the analyst's playscript and physical env thru STROBE
+* sampling, the process of systematically selecting representative elements of a population is called sampling. the purpose is to select and study supporting material about the survey objects. Sampling can reduce cost, speed, data gathering, potentially make the study more effective, and reduce bias. 
+	- Four steps to design sample
+		- determine population 
+		- determine type of sample
+		- calc size of sample
+		- plan the data to be collected and described
+	- types of sampling
+		- convenience samples
+		- purposive samples
+		- simple random samples
+		- complex random samples
+	- the historic and current data of the org could bring more insights to system analysts on the transition of the org and give a good base to predict the future. There are different analytic tools to collect both structured, semi-structured or non-structured data from different channels to help making better decisions. Documents is worthless in analyzing an org, no matter it's quantitative or qualitative.
+	- using automation API scan process tools is another way to identify problem occurance in process mining. Task mining uses desktop captures to help enhance the processes.
+	- Workforce analytics can help to understand workloads and performance
+	- observation is a close face-to-face interactive way to study the objects, you will gain first-hand, real-time infomation. Playscript is a tool that's used often in the observation approach.
+	- STROBE method is to mimic the decision makers' environment like a film analytics.
+
 
 # Chp4 Interactive methods for info gathering
 This chapter mainly focuses on the interactive methods we could use when gathering information for system analysis and design. They are:
@@ -60,8 +147,8 @@ All systems including their subsystems are corelated, but also has their own cus
 	- originally a diagram from unified modeling language (UML), now it's more a type of system architecture overview from the actor(system users) interactive perspective. It's also more of role-based functions view of the system. A use case is usually used to describe a single transaction or event.
 	- relationships: 
 		- communicates
-		- includes
-		- extends
+		- includes: shows the common use case is included in more than one use cases. A dotted arrow that points to the common use case indicates the includes relationship
+		- extends: allows the new use case to handle a variation or an exception from the basic use case. The arrow goes from the extended to the basic use case.
 		- generalizes
 	- A use case scenario is divided into three sections: identification and initialization; steps performed; and conditions, assumptions, and questions.
 	- Reasons for writing use cases
