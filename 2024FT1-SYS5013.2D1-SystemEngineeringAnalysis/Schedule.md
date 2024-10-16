@@ -54,16 +54,17 @@
 		[x] Discussion Forum 6, Peer Responses
 # Week 7: 9/30 – 10/6
 	* Due Wednesday at 11:59 PM EST 
-		[] Discussion Forum 7, Initial Responses
+		[x] Discussion Forum 7, Initial Responses
 	* Due Sunday by 11:59 PM EST 
-		[] Input Design Exercises 
-		[] Database Design Exercise 
-		[] Discussion Forum 7, Peer Responses
+		[x] Input Design Exercises : Check-In Input Form Design
+		[x] Database Design Exercise : ER Diagram
+		[x] Discussion Forum 7, Peer Responses
 # Week 8: Work due by Saturday at 11:59 PM EST
 	* Due Wednesday 11:59 PM EST 
-		[] Discussion Forum 8, Initial Responses
+		[x] Discussion Forum 8, Initial Responses
+		Discuss the importance of human-computer interaction, accurate data entry procedures, quality assurance, and implementation strategies in successful systems development. Share your thoughts and ask questions. (LO1, LO2, LO3, LO4, & LO5) 
 	* Due Saturday by 11:59 PM EST 
-		[] Design Exercise 
-		[] Data Entry Procedure Exercise
-		[] Final Exam
-		[] Discussion Forum 8, Peer Responses
+		[x] Design Exercise 
+		[x] Data Entry Procedure Exercise
+		[x] Final Exam
+		[x] Discussion Forum 8, Peer Responses
