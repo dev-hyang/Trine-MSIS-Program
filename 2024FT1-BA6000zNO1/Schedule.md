@@ -19,7 +19,7 @@
 
 # Part 3: November 04th to December 08th
 * Due Sunday, November 17th, 2024, by 11:59 PM EST
-	[] Final Reflection Discussion, Initial Post
+	[x] Final Reflection Discussion, Initial Post (Done by Nov/2/2024)
 * Due Sunday, December 8th, 2024 by 11:59 PM EST
 	[] Final Reflection Discussion, Two Replies
 	[] Self-Assessment Quiz
