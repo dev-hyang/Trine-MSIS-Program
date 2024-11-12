@@ -24,28 +24,25 @@ Tabular and Graphical Displays
 * Due Sunday by 11:59 PM EST
 
 [x] Two replies, Discussion Forum 2
-o MindTap Chapter 4 Assignment: Introduction to Probability
-o MindTap Chapter 5 Assignment: Discrete Probability Distributions
-o MindTap Chapter 6 Assignment: Continuous Probability Distributions
-o MindTap Chapter 4 Quiz: Introduction to Probability
-o MindTap Chapter 5 Quiz: Discrete Probability Distributions
-o MindTap Chapter 6 Quiz: Continuous Probability Distributions
+[x] MindTap Chapter 4 Assignment: Introduction to Probability
+[x] MindTap Chapter 5 Assignment: Discrete Probability Distributions
+[x] MindTap Chapter 6 Assignment: Continuous Probability Distributions
+[x] MindTap Chapter 4 Quiz: Introduction to Probability
+[x] MindTap Chapter 5 Quiz: Discrete Probability Distributions
+[x] MindTap Chapter 6 Quiz: Continuous Probability Distributions
 
 # Week 3:
 * Due Thursday 11:59 PM EST
-o Discussion Forum 3, Initial Post
+[x] Discussion Forum 3, Initial Post
 
 * Due Sunday by 11:59 PM EST
 o Two replies, Discussion Forum 3
-o MindTap Chapter 7 Assignment: Sampling and Sample Distributions
-o MindTap Chapter 8 Assignment: Interval Estimations
-o MindTap Chapter 9 Assignment: Hypothesis Tests
-10/28-11/3/2024
-10/21-10/27/2024
-11/4-11/10/2024
-o MindTap Chapter 7 Quiz: Sampling and Sample Distributions
-o MindTap Chapter 8 Quiz: Interval Estimations
-o MindTap Chapter 9 Quiz: Hypothesis Tests
+[x] MindTap Chapter 7 Assignment: Sampling and Sample Distributions
+[x] MindTap Chapter 8 Assignment: Interval Estimations
+[x] MindTap Chapter 9 Assignment: Hypothesis Tests
+[x] MindTap Chapter 7 Quiz: Sampling and Sample Distributions
+[x] MindTap Chapter 8 Quiz: Interval Estimations
+[x] MindTap Chapter 9 Quiz: Hypothesis Tests
 
 # Week 4:
 • Due Thursday 11:59 PM EST
@@ -87,10 +84,6 @@ o MindTap Chapter 16 Quiz: Regression Analysis: Model Building
 
 # Week 7:
 • Due Thursday at 11:59 PM EST
-11/11-11/17/2024
-11/18-11/24/2024
-11/25-12/1/2024
-12/1-12/8/2024
 o Discussion Forum 7, Initial Post
 • Due Sunday by 11:59 PM EST
 o Two replies, Discussion Forum 7
