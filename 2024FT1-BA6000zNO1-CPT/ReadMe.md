@@ -21,5 +21,5 @@
 * Due Sunday, November 17th, 2024, by 11:59 PM EST
 	[x] Final Reflection Discussion, Initial Post (Done by Nov/2/2024)
 * Due Sunday, December 8th, 2024 by 11:59 PM EST
-	[] Final Reflection Discussion, Two Replies
-	[] Self-Assessment Quiz
+	[x] Final Reflection Discussion, Two Replies - by Hang Yang - Sunday, November 24, 2024, 6:31 PM
+	[x] Self-Assessment Quiz - Submitted Sunday, November 24, 2024, 6:12 PM
