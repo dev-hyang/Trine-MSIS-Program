@@ -398,7 +398,7 @@ The sample mean and sample STDEV is <br>
 * Test Statistic for hypothesis tests involving matched samples:
 $t = \frac{\bar d - \mu_d}{s_d/\sqrt{n}}$
 
-	Using excel to get the t.025 = T.INV(1-0.25, df)
+	Using excel to get the $t_{.025}$ = T.INV(1-0.25, df)
 * p-value: T.DIST(test statistic, degree of freedom, true)
 * margin of error: $t_{.025}\frac{s_d}{\sqrt{n}}$
 * interval estimate: $\bar d \pm t_{.025}\frac{s_d}{\sqrt{n}}$
@@ -1067,3 +1067,905 @@ In simple linear regression, as the sample size increases:
 * the confidence interval for the slope parameter associated with the independent variable narrows;
 * the confidence interval for the mean value of y narrows;
 * the prediction interval for an individual value of y narrows;
+
+# 15 Multiple Regression
+1. Understand how multiple regression analysis can be used to develop relationships involving one dependent variable and several independent variables.
+
+2.	Be able to interpret the coefficients in a multiple regression analysis.
+
+3.	Know the assumptions necessary to conduct statistical tests involving the hypothesized regression model.
+
+4.	Understand the role of Excel in performing multiple regression analysis.
+
+5.	Be able to interpret and use Excel’s Regression tool output to develop the estimated regression equation.
+
+6.	Be able to determine how good a fit is provided by the estimated regression equation.
+
+7.	Be able to test for the significance of the regression equation.
+
+8.	Understand how multicollinearity affects multiple regression analysis.
+
+
+## 15.1 Introduction
+Multiple regression is to study how a dependent variable $y$ is related to (>= 2) independent variables (factors).
+* $p$ = the # of independent variables
+* Multiple Regression Model: $y = \beta_0 + \beta_1x_1 + \beta_2x_2 + ... + \beta_px_p + \epsilon$
+	* assumption 1: the mean or expected value of $\epsilon$ is 0, which leads to the mean/expected value of $y$, denoted by $E(y) = \beta_0 + \beta_1x_1 + \beta_2x_2 + ... + \beta_px_p$
+* Estimated Multiple Regression Equation: $\hat y = b_0 + b_1x_1 + b_2x_2 + ... + b_px_p$
+	* where $b_0, b_1, ..., b_p$ are the estimates of $\beta_0, \beta_1, ..., \beta_p$
+	* $\hat y$ = predicted value of the dependent variable
+
+## 15.2 Least Square method, Multiple Coefficient of Determination, Model Assumptions
+* The Least Squares Criterion: min$\sum(y_i - \hat y_i)^2$ 
+	* where $y_i$ = observed value, $\hat y_i$ = predicted value
+For simple linear regression, we are okay to use formulas to compute the slop and y-intercept. However, in multiple regression, the parameters involve the use of matrix algebra and is beyond the scope of this text.
+
+* **Relationship among SST, SSR, and SSE**
+	* SST = SSR + SSE
+		* where SST = total sum of squares = $\sum(y_i - \bar y)^2$
+		* SSR = sum of squares due to regression = $\sum(\hat y_i - \bar y)^2$
+		* SSE = sum of squares due to error = $\sum(y_i - \hat y_i)^2$
+* Multiple Coefficient of Determination $R^2 = SSR / SST$
+	* $R$-sq: when multiply 100, it can be interpreted as the percentage of the variability in $y$.
+	* In general, $R^2$ always increases as independent variables are added to the model.
+	* The larger $R^2$ is close to 1, the estimated Multiple Regression Equation provides a better fit.
+* Adjusted multiple coefficient of determination: $R_a^2= 1 - (1 - R^2)\frac{n-1}{n - p -1}$
+	* where $n$ = the # of observatoins
+	* $p$ = the # of independent variables.
+	* it's to avoid overestimating the impact of adding an independent varialbe on the # of variability.
+
+* **Model Assumptions**
+	* $E(\epsilon) = 0$
+	* The variance of $\epsilon$ is denoted by $\sigma^2$ and is the same for all values of the independent variables.
+	* The values of $\epsilon$ are independent.
+	* The error term $\epsilon$ is a normally distributed random variable reflecting the deviation bet. the y value and the predicted value.
+
+## 15.5 Testing for Significance, Prediction
+Contrast to simple linear regression, the $t$ test and $F$ test have different purposes:
+* **overall significance**: The $F$ test is used to determine whether a significant relationship exists bet. the dependent variable and the set of all the independent variables; we will refer to the $F$ test as the test for overall significance.
+The $F$ Test for Overall Significance:
+	* $H_0: \beta_0 = \beta_1 = ... = \beta_p = 0$
+	* $H_a$: One ore more of the parameters is not equal to zero
+		* if $H_0$ is rejected, the test gives us sufficient proof to conclude that at least 1 parameters is not zero and that the overall relationship between $y$ and the independent variables is significant. 
+		* the total sum of squares SST has $n-1$ df
+		* the **mean square due to regression** MSR = $SSR / p$, where $p$ is the # of independent variables.
+		* the **mean square due to error** MSE = $SSE /(n - p - 1)$, where $n$ is the # of sample data points, the $p$ is same as above;
+			* MSE provides an unbiased estimate of $\sigma^2$, the variance of the error term $\epsilon$: $\sigma^2$ = MSE 
+			* If $H_0$ is true, MSR also provides an unbiased estimate of $\sigma^2$, thus, the MSR/MSE is close to 1.
+			* if $H_0$ is false, MSR overestimates $\sigma^2$, the ratio becomes larger,
+			* To determine how large the ratio MSR/MSE is so that we can reject $H_0$, we will use
+				* the model assupmtions are valid,
+				* the sampling distrubtion of the ratio follows $F$ distribution with $p$ in numerator df, and $n-p-1$ in denominator df.
+			
+	* Test Statistic: $F = \frac{MSR}{MSE}$
+	* Rejection rules
+		* p-value approach: Reject $H_0$ if p-value $\le \alpha$, where p-value = F.DIST.RT(test statistic, p, n-p-1)
+		* critical-value approach: Reject $H_0$ if $F \ge F_{\alpha}$, where $F_{\alpha}$ = F.INV.RT($\alpha$, p, n-p-1)
+
+* **individual significance**: The $t$ test is to determine if each of the individual independent variable is significant. A separate $t$ test is conducted for each of the independent variables in the model.
+$t$ Test for Individual Significance, for any parameter $\beta_i$:
+	* $H_0: \beta_i = 0$
+	* $H_a: \beta_i \ne 0$
+	* **Test Statisitc**: $t = b_i / s_{b_i}$, where
+		* $s_{b_i}$ is the estimate of the standard deviation of $b_i$. The value can be computed by Excel.
+	* **Rejection Rule**: 
+		* p-value approach: Reject $H_0$ if p-value $\le \alpha$, where p-value = T.DIST.2T(test statistic, n-p-1)
+		* critical value approach: Reject $H_0$ if $t \le t_{\alpha/2}$ or if $t \ge t_{\alpha/2}$, where $t_{\alpha/2}$ = T.INV(1-$\alpha$/2, n-p-1)
+
+Use the Excel Tool - Linear Regression Analysis, you can find the individual signifiance just in the Summary Output for each row of independent variables and their corresponding t-statistics and p-values.
+
+* **Multicollinearity**
+The Term "independent variables" does not mean themselves are independent and instead they could be correlated. 
+* The sample correlation coefficient $r_{x_ix_j}$ is used to determine the extent to which the independent variables $x_i,\, x_j$ are related.
+	* A sample correlation coefficient $\ge 0.7$ or $\le -0.7$ for two independent variables could mean potential problems with multicollinearity. The multicollinearity could cause none of 
+	the individual parameters are significantly different from zero when an $F$ test on the overall regression indicates a significant relationship. It further can cause the estimated 
+	slope coefficients to be misleading.
+
+Also, the change in $b_1$: the coefficient of $x_1$ if we drop $x_2$, means that the multicollinearity can explain the $x_1$ and $x_2$ are related.
+And the change in $x_1$ will cause change in $x_2$.
+
+* **Confidence Interval**
+A confidence interval of the mean travel time for all trucks that travel 100 miles and make two deliveries.
+$y = \hat y \pm t_{\alpha/2}s^*$, where $s^*$ is around 1.02 times standard deviation of regression 
+
+* **Prediction Interval**
+A prediction interval of the travel time for one specific truck that travels 100 miles and makes two deliveries.
+$y = \hat y \pm t_{\alpha/2}\hat s$, , where $\hat s$  is around 1.05 times standard deviation of regression 
+
+## 15.7 Categorical Independent Variables, Residual Analysis, Hypotheis on big data
+The independent variables may be categorical or quantative. Categorical independent variables such as gender(male, female) and method of payments
+(cash, credit card, check).
+To incorporate the type of repair into the regression model, we define the following variable. 
+$x_2 = 
+\begin{cases}
+	0 \; if\, the\, type\, of\, repair\, is\, mechanical\\
+	1 \; if\, the\, type\, of\, repair\, is\, electrical
+\end{cases}$
+In regression analysis $x_2$ is called a **dummy or indicator variable**. Using this dummy variable, we can 
+write the multiple regression model as <br>
+$y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \epsilon$
+### Intepreting the Parameters
+* $E(y) = \beta_0 + \beta_1x_1 + \beta_2x_2$
+	* When a categorical variable is present, consider the case when  $x_2 = 0$ (mechanical repair).
+	Using E(y|mechanical) to denote the mean or expected value of repair time given a mechanical repair.
+	We have E(y|mechanical) = $\beta_0 + \beta_1x_1$
+	* and for an electrical repair ($x_2 = 1$), we have
+	E(y|electrical) = $\beta_0 + \beta_1x_1 + \beta_2$
+	* $\beta_1$ is the change in $E(y)$ for a 1 unit change in $x_1$ holding $x_2$ constant.
+	* $\beta_2 = E(y|electrical) - E(y|mechanical)$
+
+* A categorical variable with $k$ levels must be modeled using $k-1$ dummy variables. Care must be  taken 
+in defining and intepreting the dummy variables.
+	* with each dummy variable being coded as 0 or 1
+
+### Residule Analysis
+* **Residual Plot against $y$**
+
+We know that a residual plot against the independent variable $x$ can be used to validate the assumptions for 
+a simple linear regression model. In multiple regression analysis, it's more common to develop a residual plot
+against the predicted value $\hat y$. 
+* the dependent variable $\hat y$ on the horizontal axis
+* the residual values $y_i - \hat y_i$  on the vertical axis
+* it's used to determine if the model's assumptions are satisified.
+
+* **Standardized Residual Plot against $y$**
+
+We know how to construct a standardized residual plot against $x$ and discussed how the standardized 
+residual plot could be used to identify outliers and provide insight about the assumption that the error 
+term $\epsilon$ has a normal distribution.
+* we recommend any observation with a standardized residual of $\le -2$ or $\ge +2$ an outlier.
+
+In multiple regression analysis, instead of developing a standardized residual plot against each of the 
+independent variables, we will construct one standardized residual plot against the predicted values $\hat y$.
+
+### Big Data and Hypothesis Testing in MLR
+We know that p-value for the test of the hypothesis $H_0: \beta_1=0$ decreases as the sample size increases.
+Likewise, for a given level of confidence, 
+* the confidence interval for $\beta_1$, 
+* the confidence interval for the mean value of $y$,
+* the prediction interval for an in individual value $y$
+narrows as the sample size increases. And same works for MLR.
+
+Thus, we are more likely to reject the hypothesis that a relationship does not exist bet. the dependent variable
+ and all independent variables as the sample size increases.
+
+
+# 16 Regression Analysis: Model Building
+**Learning Objectives**
+
+1.	Learn how the general linear model can be used to model problems involving curvilinear relationships.
+
+2.	Understand the concept of interaction and how it can be accounted for in the general linear model.
+
+3.	Understand how an F test can be used to determine when to add or delete one or more variables.
+
+4.	Develop an appreciation for the complexities involved in solving larger regression analysis problems.
+
+5.	Understand how variable selection procedures can be used to choose a set of independent variables for an estimated regression equation.
+
+6.	Know how the Durbin–Watson test can be used to test for autocorrelation.
+
+7.	Learn how experimental design problems can be analyzed using a regression model.
+
+## 16.1 General Linear Model (GLM)
+Model buiding is the process of developing an estimated regression equation that describes the relationship bet. a dependent 
+variable and one or more independent variables. The major issues are:
+* finding the proper functional relationship 
+* selecting the independent variables
+
+Suppose we have collected data for one dependent variable $y$ and $k$ independent variables, our objective is to use
+these data to develop an estimated regression equation that provides the best relationship bet. $y$ and all $x_i$.
+* **General Linear Model**
+$y = \beta_0 + \beta_1z_1 + \beta_2z_2 + ... + \beta_pz_p + \epsilon$
+	* where $z_j$ is a function of $x_1, x_2, ..., x_k$
+	* the simplest case is when we have collected data for just one variable is called Simple Linear Regression in Chap14.
+		It's also called *simple first-order model with one predictor variable*
+* **Modeling Curvilinear Relationships**
+Example: Reynolds, Inc<br>
+Sales = 111.2279 + 2.3768 Months<br>
+
+	A linear relationship explains a high percentage of the variability in sales ($R^2=.7812). The standardized residule plot
+suggests that a curvilinear relationship is present.
+* To account for the curvilinear relationship, we set $z_1 = x_1$ and $z_2 = x_1^2$, then we have:<br>
+Sales = 45.3476 + 6.3448 Months - 0.0345 MonthsSq
+	* where MonthsSq = the square of the # of months the salesperson has been employeed
+	* Note that the overall model is significant (p-value for $F$ test is 8.75E-07)
+	* Note that p-value for MonthsSq = 0.0023 $\le$ 0.05 and we conclude that adding MonthsSq
+		to the model involving Months is significant.
+	* With the Adjusted $R^2$ value of .8859, we should be happy with the fit of new regression model.
+
+* **Interaction**
+If the original data set consits of observations for $y$ and two independent variables $x_1,\, x_2$, we 
+can develop a **second-order** model with two predictor variables by substituting $z_1 = x_1, z_2 = x_2, 
+z_3 = x_1^2, z_4 = x_2^2, z_5 = x_1x_2$ into the general linear model, which is:<br>
+$y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_1^2 + \beta_4x_2^2 + \beta_5x_1x_2 + \epsilon$
+	* In above model, the variable $z_5 = x_1x_2$ is added to account for the potential effects, 
+		called **interaction** of the two variables.
+
+For example, Typler's belife that the # of units sold dependes linearly on selling price and advertising
+expenditure (accounted for by the $\beta_1x_1$ and $\beta_2x_2$ terms), and that there is interaction bet.
+the two variables (accounted for by the $\beta_3x_1x_2$).<br>
+To account for the **interaction** effect, we will use below regression model:<br>
+$y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_1x_2 + \epsilon$
+a.k.a $y = \beta_0 + \beta_1z_1 + \beta_2z_2 + \beta_3z_3 + \epsilon$	
+* where $y$ = unit sales
+	* $x_1$ = price 
+	* $x_2$ = advertising expenditure
+
+* **Transformation on the dependent variable**
+If a linear regression shows a good fit for the estimated regression equation with p-value for $F$ test 
+much smaller than $\le 0.05$. However, the variablity in the residules seem to increase as the value of 
+$\hat y$ increases. That's to say, we have the wedge-shaped pattern indicative of a nonconstant variance.
+
+**Logarithm Transformation**<br>
+Often the problem of nonconstant variance can be corrected by transforming the dependent 
+variable $y$ to a different scale.
+	* for example, using logarithm (either $log_{10}$ or $ln$) of the dependent variable instead of original value would compress the
+		values and thus diminish the effects of nonconstant variance.
+
+**Reciprocal Transformation**<br>
+Or an alternative approach to nonconstant variance is to use $1/y$ as the dependent variable instead of $y$.
+
+It's hard to determine which transformation works better until we try both.
+
+With transformation, nonlinear models that are intrinsically linear. For example:<br>
+$E(y) = \beta_0\beta_1^x$<br>
+---><br>
+$ln{E(y)} = ln\beta_0 + x*ln{\beta_1}$<br>
+---><br>
+$y' = {\beta_0}' + {\beta_1}'x$ 
+
+## 16.2 Determining when to add or delete variables
+We will show how an $F$ test can be used to determine if it is advantageous to add one or more independent 
+variables to a multiple regression model. This test is based on a determination of the amount of reduction
+in the **error sum of squares (SSE)** resulting from adding one or more independent variables.
+
+The following $F$ statistic provides the basis for testing if addition of $x_2$ is statistically significant:
+<br> $F = \frac{(SSE(x_1) - SSE(x_1, x_2))/1}{SSE(x_1, x_2)/(n-p-1)}$
+	* then Using Excel, p-value = F.DIST.RT(test statis, addition # of ind variables, n-p-1)
+	* the above method is similar to be obtained by using the $t$ test for the significance of an individual
+		parameter.
+	* if the $t$ test shows that only one parameter is not significant, the corresponding variable can be
+	dropped from the model.
+	* however, if the $t$ test shows that two or more parameters are not significant, no more than one
+		independent variable can ever be dropped from a model on the basis of a $t$ test;
+
+### General case
+Consider the following multiple regression model involving $q$ independent variables, where $q \lt p$.
+<br> $y = \beta_0 + \beta_1x_1 + ... + \beta_qx_q + \epsilon$
+<br> if we add variables x_{q+1}, ..., x_p,
+<br> $y = \beta_0 + \beta_1x_1 + ... + \beta_qx_q +
+	\beta_{q+1}x_{q+1} + ... + \beta_px_p + 
+ \epsilon$
+
+To test if the addition of $x_{q+1}, x_{q+2}, ..., x_p$ is statistically significant, the null and 
+alternative hypothesis can be stated as follows:<br>
+$H_0: \beta_{q+1} = \beta_{q+2} = ... = \beta_p = 0$<br>
+$H_a:$ one or more of the paramters is not 0
+
+The follow $F$ statistic provides the basic for testing:
+$F = \frac{(SSE(x_1, x_2,..., x_q) - SSE(x_1, x_2,...,x_q,x_{q+1},...,x_p))/(p-q)}{SSE(x_1, x_2, ..., x_p)/(n-p-1)}$
+* where p is the # of independent variables
+* q = the addition # of independent variables
+* p-value = F.DIST.RT(test statis, p-q, n-p-1)
+* if p-value $\le \alpha$ or $F \gt F_{\alpha}$, we can reject $H_0$
+	and conclude that the set of additional independent variables is statisticaly significant.
+
+**Notes** Another format:
+* SSE(reduced) = SST - SSR(reduced)
+* SSE(Full) = SST - SSR(full)
+<br>Hence
+* SSE(reduced) - SSE(full) = [SST - SSR(reduced)] - [SST - SSR(full)] =
+	SSR(full) - SSR(reduced)
+* F = (SSR(full) - SSR(reduced)/# of extra terms)/MSE(full)
+
+## 16.4 Variable Selection Procedures
+* As a preliminary step: let us consider the sample correlation coefficients bet. each pair of variables.
+* Remember if Multicollinearity can cause problems if the absolute value of the sample correlation coefficient exceeds 
+.7 for any two of the independent variables.
+* Recall that for the case of one independent variable, the square of this sample correlation coefficient is 
+the coefficient of determination ($R^2$). 
+* 1st we can build the regression equation based on the full list of all independent variables;
+* then we can use the top 3-5 independent variables to build another regression equation, using the $F$ test if adding the extra terms could be significant or not.
+	* Selecting either based on $t$ distribution ($p$-value)/ most significant independet variables 
+	* or based on highest single correlation coefficients
+
+**Four Variable Selection Procedures**
+* Stepwise regression (Excel Tools can perform)
+* forward Selection
+* backward elimination
+* best-subsets regression
+The first three procedures are iterative, at each step of the procedure a single independent variable is added or deleted
+and the new model is evaluated. The process continues until a stopping criterion indicates that the procedure cannot find
+a better model.
+	* ususally the selection criterion is based on $F$ statistic in ###16.2
+
+The best-subsets procedure is not a one-variable-at-a time procedure; it evaluates regression models involving 
+different subsets of the independent variables.
+
+### Stepwise Regression
+**Step1**: The stepwise regression procedure begins each step by determining if any of the variables already in the model should be removed.
+It does so by first computing an $F$ statistic and corresponding p-value for each independent variable in the model.
+* $\alpha$ is called **$p$ value to leave**
+* if the $p$-value for any independent variable is greater than $p$ value to leave, the independent variable with largest $p$-value 
+is removed from the model and the stepwise regression procedure begins a new step.
+
+**Step2**: If no independent variable can be removed from the model, the procedure attempts to enter another independent variable into the model.
+It does so by first computing an $F$ statistic and corresponding $p$-value for each independent variable that is not in the model.
+* $\alpha$ is called **$p$ value to enter**
+* THe independent variable with the smallest $p-value$ is entered into the model provided its $p-value$ is less than
+	$p$ value to enter. The procedure continus in this manner until no independent variables can be deleted from or added to the model.
+
+### Forward Selection
+The forward selection procedure starts with no independent variables. It adds variablese one at a time using the same procedure as 
+stepwise regression for determining if an independent variable should be entered into the model. 
+* However, the forward selection procedure does not permit a variable to be removed from the model once it has been entered. 
+
+The procedure stops when the $p-value$ for each of the
+independet variaables not in the model is greater than $p$ value to Enter.
+
+### Backward elimination
+THe backward elimination procedure begins with a model that includes all the independent variables. It then deletes one independent 
+variable at at time using the same procedure as stepwise regression.
+* The backward elimination procedure does not permit an independent variable to be reentered once 
+it has been removed.
+
+The procedure stops when none of the independent variables in the model has a p-value greater than p Value to leave.
+
+* Forward Selection and backward elimination may lead to different models.
+
+### Best-Subsets Regression 
+The above three approaches provide no guarantee that the best model for a given # of variables will be found.
+
+Tools can be used to find the best fit given a specified # of independent variables. like 
+* two best one-variable estimated regression equation
+* two best two-variable regression equation 
+* two best three-variable regression equation 
+
+The criterion used in judging which is best are the value of coefficient of determination ($R^2$).
+
+All above four methods can be implemented in Excel.
+
+## 16.5 Multiple Regression to Experimental Design 
+We will show how the use of dummy variables in a multiple regression equation can provide another 
+approach to solving experimental design problems.
+
+In general, if the factor involves $k$ distinct levels or treatments, we need to define $k-1$ dummy 
+variables. For example:
+* $E(y)$ = Expected value of the # of units produced per week
+	<br> = $\beta_0 + \beta_1A + \beta_2B$
+	* where $\beta_0$ is the expected value of the # of units assembled per week who uses C when A=0, B=0
+	* For method A, when A=1, B=0, we have $E(y)=\beta_0 + \beta_1$
+	* For method B, when A=0, B=1, we have $E(y)=\beta_0 + \beta_2$
+
+After calculation, it's the same as we use Excel tools. We would conclude that the three methods 
+do not differ if:
+<br>$H_0: \beta_1 = \beta_2 = 0$
+We will use the $F$ test for overall significance to determine if it can be rejected.
+
+**Excercises:**
+1. Write a multiple regression equation that can be used to analyze the data for a 
+randomized block design involving three treatments and two blocks. Define all variables
+	* The dummy variables are defined as follows:
+		* Treatment1: $x_1=0, x_2=0$,
+		* Treatment2: $x_1=1, x_2=0$,
+		* Treatment3: $x_1=0, x_2=1$
+		* $x_3=0$ if block is 1 and $x_3=1$ if block is 2.
+		* $E(y) = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3$
+
+2. Write a multiple regression equation that can be used to analyze the data for a 
+two-factorial design with two levels for factor A and three levels for factor B. Define all variables.
+	* $Y = \beta_0 + \beta_1A + \beta_2B_1 + \beta_3B_2 + \beta_4(A*B_1) + \beta_5(A*B_2) + \epsilon$
+		* For level A1: A = 0,
+		* For level A2: A = 1,
+		* For level B1: B1 = 1, B2 = 0
+		* For level B2: B1 = 0, B2 = 1
+		* For level B3: B1 = 0, B2 = 0, level B3 is the baseline and is not explicitly represented 
+			to avoid multicollinearity
+		* $A*B_1, A*B_2$: interaction terms for Factor A and two levels of Factor B.
+			* $A*B_1$: interaction bet. A and B1
+			* $A*B_2$: interaction bet. A and B2
+		* $\beta_0$: intercept, representing the mean response at the baseline levels (A1, B3).
+		* $\beta_1$: main effect of A 
+		* $\beta_2, \beta_3$: main effect of B 
+
+## 16.6 Autocorrelation and Durbin-Watson Test 
+Often the data we used in statistic is not realtime. Therefore, the value of $y$ at time $t$, $y_t$, 
+is related to previous time periods. We say **autocorrelatoin** or **serial correlation** exists in the data.
+* if the value of $y$ in time is related to the value of $y$ in time period $t-1$, first-order autocorrelation
+is present;
+* if the value of $y$ in time is related to the value of $y$ in time period $t-2$, second-order autocorrelation
+is present;
+
+When autocorrelation exists, the error terms are not independent assumption is violated. In the case,
+we denote $\epsilon_{t}$ as error at time $t$. In order to avoid this issue, precautions must be taken
+to detect autocorrelation and adjusted.
+
+**Durbin-Watson** statistic: $d$
+Suppose the values of $\epsilon$ are not independent but are related as:<br>
+$\epsilon_t = \rho\epsilon_{t-1} + z_t$
+* where $\rho$ is a parameter with an absolute alue less than one,
+	* if $\rho=0$, the error terms are not related, there is no autocorrelation
+	* if $\rho>0$, we have positive autocorrelation
+	* if $\rho<0$, we have negative autocorrelation
+* $z_t$ is a normally and independently distributed random variable with a mean of zero and a variance of $\sigma^2$
+
+Statistic $d = \frac{\sum_{t=2}^n(e_t - e_{t-1})^2}{\sum_{t=1}^n(e_t)^2}$
+* where $e_i = y_i - \hat y_i$
+* if successive values of the residules are close together(positive autocorrelation), the value of the Durbin-Watson
+	test statistic will be small. If successive values of the residuals are far apart (negative), the value of the 
+	Durbin-Watson statistic will be large.
+* $d$ ranges [0, 4], if $d=2$, it means no autocorrelation.
+
+**Hypothesis Test of Durbin-Watson statistic**
+$H_0: \rho=0$
+<br>$H_a: \rho>0$ is alternative hypothesis for positive autocorrelation
+<br>$H_a: \rho<0$ is alternative hypothesis for negative autocorrelation
+<br>$H_a: \rho \ne 0$ is two sided test
+
+* for positive autocorrelation test 
+if $d<d_L$, we conclude that positive autocorrelation is present;
+<br> if $d_L \le d \le d_U$, we say the test is inconclusive;
+<br> if $d \gt d_U$, we conclude that there is no evidence of positive autocorrelation;
+
+* for negative autocorrelation test
+if $d>4-d_L$, we conclude that negative autocorrelation is present;
+<br> if $4-d_U \le d \le 4-d_L$, we say the test is inconclusive;
+<br> if $d \lt 4-d_U$, we conclude that there is no evidence of positive autocorrelation;
+
+* for two-sided test
+If $d<d_L \;or\; d>4-d_L$, we reject $H_0$ and autocorrelation is present.
+<br> If $d_L \le d \le d_U \; or \; 4-d_U \le d \le 4-d_L$, we say it's inconclusive;
+<br> If $d_U < d < 4-d_U$, we say there is no evidence of autocorrelation.
+
+Tips: The Durbin-Watson list the smallest sample size as 15. 50 is better.
+<br> If significant autocorrelation is identified, we should look into if we omitted 
+one or more key independent variables that have time-ordered effects on the dependent
+variables. If no such variables found, including an independent variable that measures
+time of the observation will sometimes eliminate or reduce the autocorrelation.
+
+# 17 Time Series Analysis and Forecasting ebook
+**Learning Objectives**
+
+1.	Be able to construct a time series plot and identify the underlying pattern in the data.
+2.	Understand how to measure forecast accuracy.
+3.	Be able to use smoothing techniques such as moving averages and exponential smoothing to forecast a time series with a horizontal pattern.
+4.	Know how simple linear regression can be used to forecast a time series with a linear trend.
+5.	Be able to develop a quadratic trend equation and an exponential trend equation to forecast a time series with a curvilinear or nonlinear trend.
+6.	Know how to develop forecasts for a time series that has a seasonal pattern.
+7.	Know how time series decomposition can be used to separate or decompose a time series into season, trend, and irregular components.
+8.	Be able to deseasonalize a time series.
+9.	Know the definition of the following terms:
+
+| 1 | 2 |
+| --- | --- |
+| time series | mean squared error |
+| time series plot	| mean absolute percentage error |
+| horizontal pattern |	moving average |
+| stationary time series	| weighted moving average |
+| trend pattern	| smoothing constant |
+| seasonal pattern |	time series decomposition |
+| cyclical pattern	| additive model |
+| mean absolute error 	| multiplicative model |
+
+The purpose of the chapter is to provide an introduction to time series analysis and forecasting. 
+Forecasting methods can be classified as **qualitative or quantitative**.
+* Qualitative methods invovle the use of expert judgement to develop forecasts when historical data on the variable being forecast are either not applicable or unavailable.
+* Quantitative methods can be used when 
+	* past info about the variable being forecast is available
+	* the information can be quantifiled, and
+	* it is reasonable to assume that the pattern of the past will continue into the future
+* Time Series method is a forecasting procedure focusing on only past value of the variables or forecast errors. The historical data are referred as a time series.
+* Casual methods are based on the assumption that the variable we are forecasting has a cause-effect relationship with one or more other variables.
+
+**cross-sectional regression** vs **time series regression**
+* time series regression refers to the use of regression analysis when the independent variable is time
+
+## 17.1 Time Series Pattern
+A **Time Series** is a sequence of observations on a variable measured at successive points in time or over successive periods of time
+
+To identify the underlying pattern in the data, a useful first step is to construct a **time series plot**
+
+**Horizontal pattern**
+* A horizontal pattern exists when the data fluctuate around a constant mean.
+* The term **stationary time series** is used to denote a time series whose statistical properties are independent of time. In particular this means that:
+	* the process generating the data has a constant mean
+	* the variability of the time series is constant over time
+
+Tips: ***Changes in business conditions can often result in a time series that has a horizontal pattern shifting to a new level.***
+* E.g., the number of gallons of gasoline sold by a gasoline distributor in Bennington, Vermont, over the past 12 weeks. 
+
+**Trend Pattern**
+A trend pattern exists if a time series may also show gradual shifts or movements to relatively higher or lower values over a longer period of time.
+* E.g., the sales for a cholesterol drug since the company won FDA approval for it 10 years ago. The time series increases in a nonlinear fashion
+
+**Seasonal Pattern**
+Seasonal patterns are recognized by seeing the same repeating patterns over successive periods of time.
+* E.g., a manufacturer of swimming pools expects low sales activity in the fall and winter months, with peak sales in the spring and summer months.
+* E.g.2, the number of umbrellas sold at a clothing store over the past five years follows seasonal pattern instead of horizontal pattern.
+
+**Combination Pattern**
+Some time series include a combination of a trend and seasonal pattern.
+* E.g. smartphone sales for a particular manufacturer over the past four years.
+
+**Cyclical Pattern**
+A cyclical pattern exists if the time series plot shows an alternating sequence of points below and above the trend line lasting more than one year. 
+* E.g, periods of moderate inflation followed by periods of rapid inflation can lead to time series that alternate below and above a generally increasing trend line (e.g., a time series for housing costs). 
+
+Using Excel's Scatter Plot can easily build your 1st time series plot.
+
+## 17.2 Forecast Accuracy Measures
+
+### Forecast Accuracy
+The key concept associated with measuring forecast accuracy is forecast error, defined as: **Forcast Error = Actual - Forcast**
+* It's similar to residuals in regression analysis
+
+**Naive Forecasting method**: using the simplest of all the forecasting methods: an approach that uses the most recent week’s sales volume as the forecast for the next week. 
+
+**Mean of the forecast errors** are not a very useful measure of forecast accuracy.
+
+**Mean absolute error (MAE)** can be better then mean error to avoid the problem of positive and negative forecast errors offsetting one another.
+
+**Mean Squared Error (MSE)**: the average of the sum of squared forecast errors.
+
+**Mean absolute percentage error(MAPE)**: the average of the sum of **absolute percentage(forecast error/actual value)** errors.
+
+When a shift to a new level like "new contract", it takes a long time for the forecasting method that uses the average of all the historical data to adjust to the new level of the time series. On the other hand, the simple naive method adjusts very rapidly to the change in level because it uses the most recent observation available as the forecast.
+
+## 17.3 Horizontal Forcasting Methods
+The common forecasting methods for Horizontal pattern are (smoothing methods):
+* **moving averages**: uses the average of the most recent $k$ data values in the time series as the forecast for the next period.
+* weighted moving averages
+* exponential smoothing
+
+Without modification, all of above methods are not accurate when significant trend, cyclical, or seansonal effects are present. They are easy to use and generally provide high accuracy for short-range forecasting.
+
+### Moving Average Forecast of Order $k$
+$F_{t+1} = \frac{\sum{most\; recent\; k \;data\; values}}{k}$ = $\frac{Y_t + Y_{t-1} + ... + Y_{t-k+1}}{k}$
+* $F_{t+1}$ = forecast of the time series for period $t+1$
+* $Y_t$ = actual value of the time series in period $t$
+
+So managerial judgment based on an understanding of the behavior of a time series is helpful in choosing a good value for $k$. 
+
+To determine if a moving average with a different order $k$ can provide more accurate forecasts, we recommend using trial and error to determine the value of $k$ that minimizes **MSE**.
+
+### Weighted Moving Average
+In the moving averages method, each observation in the moving average calculation receives the same weight. One variation, known as **weighted moving averages**, involves selecting a different weight for each data value and then computing a weighted average of the most recent k values as the forecast.
+* In most cases, the most recent observation receives the most weight, and the weight decreases for older data values.
+* The only requirement in selecting the weights is that their sum must equal 1
+* To determine whether one particular combination of number of data values and weights provides a more accurate forecast than another combination, we recommend using **MSE** as the measure of forecast accuracy. 
+
+### Exponential Smoothing
+Exponential smoothing also uses a weighted average of past time series values as a forecast
+<br> $F_{t+1} = \alpha Y_t + (1-\alpha)F_t$
+* $F_{t+1}$ = forecast of the time series for period $t+1$
+* $Y_t$ = actual value of the time series in period $t$
+* $F_t$ = forecast of the time series for period $t$
+* $\alpha$ = smoothing constant ($0 \le \alpha \le 1$)
+
+Use Excel Regression Tool - Exponential Smoothing, you can easily build the table and compute the MSE.	
+
+## 17.4 Trend Forecasting Method
+We present two forecasting methods in this section that are appropriate for time series exhibiting a trend pattern. We will show how simple linear regression can be used to forecast a time series with a linear trend.
+
+We then show how the curve-fitting capability of regression analysis can also be used to forecast time series with a curvilinear or nonlinear trend.
+
+### Linear Trend Regression
+$T_t = b_0 + b_1t$
+* where $T_t$ = linear trend forecast in period $t$
+* $b_0$ = intercept of the linear trend line
+* $b_1$ = slope of the linear trend line
+* $t$ = time period
+
+$b_1 = \frac{\sum_{t=1}^n(t-\bar t)(Y_t - \bar Y)}{\sum_{t=1}^n(t - \bar t)^2}$
+
+$b_0 = \bar Y - b_1t$
+* where $Y_t$ = value of the time series in period $t$
+* $n$ = number of time periods (# of observations)
+* $\bar Y$ = average value of the time series
+* $\bar t$ = average value of $t$
+
+Using Excel’s Regression Tool to Compute a Linear Trend Equation
+* Choose Regression from the list of Analysis Tools
+* The MSE is the MSE in the regression summary
+
+### Non-Linear Trend Regression
+Quadratic Trend Equation
+* $T_t = b_0 + b_1t + b_2t^2$
+
+Using **Excel Regression Tool** to Compute a Quadratic Trend Equation.
+* This time there will be two independent variables, $x, x^2$
+
+Using **Excel's Chart Tools** for Trend Projection
+* In the Charts Group, click insert Scatter(X, Y) or Bubble Chart button
+* Can choose **Add Trendline**, in the **Format Trendline**, choose Polynomial from the **Trend/Regression Type** list. 
+	* Exponential
+	* Linear
+	* Logarithmic
+	* Polynomial (order)
+	* Power
+	* Moving Average (Period)
+
+## 17.5 Seasonality and Trend
+### Seasonality w/o trend
+
+At first glance, you might conclude that the data follow a horizontal pattern and that single exponential smoothing could be used to forecast sales. But closer inspection of the time series plot reveals a pattern in the data. That is, the first and third quarters have moderate sales, the second quarter has the highest sales, and the fourth quarter tends to be the lowest quarter in terms of sales volume. Thus, we would conclude that a quarterly seasonal pattern is present.
+
+We can use the same approach **Dummy variables** to model a time series with a seasonal pattern by treating the season as a categorical variable. 
+* Recall that when a categorical variable has k levels, k − 1 dummy variables are required. E.g. if there are four seasons, we need three dummy variables. 
+* When dealing with a time series that has both trend and seasonal effects, this simple averaging approach will not work.
+
+### Seasonality and Trend
+The general form of the estimated multiple regression equation for modeling both the quarterly seasonal effects and the linear trend in the smartphone time series is as follows:
+<br>$Y_t = b_0 + b_1 Qtr1 + b_2 Qtr2 + b_3 Qtr3 + b_4 t$
+* where $Y_t$ = estimate or forecast of sales in period t
+* Qtr1 = 1 if time period $t$ corresponds to the 1st quarter of the year; 0 otherwise,
+* Qtr2 = 1 if ... 2nd quarter, 0 otherwise,
+* Qtr3 = 1 if ... 3rd quarter, 0 otherwise,
+* $t$ = time period
+
+The dummy variables in the estimated multiple regression equation actually provide four estimated multiple regression equations, one for each quarter. 
+
+**Models based on Monthly Data**: Because there were 4 levels for the categorical variable season, 3 dummy variables were required. However, many businesses use monthly rather than quarterly forecasts. For monthly data, season is a categorical variable with 12 levels and thus 11 dummy variables are required.
+
+## 17.6 Time Series Decomposition
+**Time series decomposition** can be used to separate or decompose a time series into seasonal, trend, and irregular components. While this method can be used for forecasting, its primary applicability is to get a better understanding of the time series.
+
+Many other time series, such as unemployment statistics, home sales, and retail sales, are subject to strong seasonal influences. It is important to deseasonalize such data before making a judgment about any long-term trend.
+
+Time series decomposition methods assume that $Y_t$, the actual time series value at period t, is a function of three components: 
+* a trend component; 
+* a seasonal component; 
+* and an irregular or error component. 
+
+How these three components are combined to generate the observed values of the time series depends upon whether we assume the relationship is best described by an **additive or a multiplicative model**.
+
+### Additive Decomposition Model 
+$Y_t = Treand_t + Seasonal_t + Irregular_t$
+* where $Trend_t$ = trend value at time period $t$
+* $Seasonal_t$ = seasonal value at time period $t$
+* $Irregular_t$ = irregular value at time period $t$
+* irregular component corresponds to the error term $\epsilon$, the variability in the time series that cannot be explained by the trend and seasonal components.
+
+
+### Multiplicative Decomposition Model
+$Y_t = Trend_t \times Seasonal_t \times Irregular_t$
+* where $Trend_t$ = trend value at time period $t$
+* $Seasonal_t$ = seasonal index at time period $t$
+* $Irregular_t$ = irregular index at time period $t$
+
+Calculating the Seasonal Indexes
+Note, however, that with four quarters in the moving average, there is no middle period. Like Quarter 2.5
+
+**Centered moving average**: the average of the two consective moving averages.
+
+The **seasonal-irregular** values are often referred to as the de-trended values of the time series.
+$Seasonal_t \times Irregular_t$ = $Y_t / Trend_t$
+
+The common **seasonal index** is average of all same # of quarter/month.
+* Seasonal-irregular values greater than 1.00 indicate effects above the trend estimate and values below 1.00 indicate effects below the trend estimate. Thus, the three seasonal-irregular values for quarter 3 show an above-average effect in the third quarter.
+* Interpretation of the seasonal indexes in Table 17.22 provides some insight about the seasonal component in smartphone sales. The best sales quarter is the fourth quarter, with sales averaging 14% above the trend estimate. The worst, or slowest, sales quarter is the second quarter; its seasonal index of .84 shows that the sales average is 16% below the trend estimate. The seasonal component corresponds clearly to the intuitive expectation that smartphone sales increase when a new school year begins (quarter 3) and for the holiday season (quarter 4).
+* There are a number of different approaches to computing the seasonal indexes. In this section each seasonal index was computed by averaging the corresponding seasonal-irregular values. Another approach is to use the median of the seasonal-irregular values as the seasonal index.
+* One final adjustment is sometimes necessary in obtaining the seasonal indexes. Because the multiplicative model requires that the average seasonal index equal 1.00, the sum of the four seasonal indexes in Table 17.22 must equal 4.00.
+<br> Adjustment = season index * 4 / (sum of the unadjusted seasonal indexes)
+
+**Deseasonalized time series**: Using a multiplicative decomposition model, we deseasonalize a time series by dividing each observation by its corresponding seasonal index. Then we can have regression tool to generate estimated regression equation
+
+The final step in developing the forecast when both trend and seasonal components are present is to use the seasonal indexes to adjust the deseasonalized trend projections.
+
+Now we must adjust the forecast for the seasonal effect. The seasonal index for the first quarter of year 5 (t = 17) is 0.93, so we obtain the quarterly forecast by multiplying the deseasonalized forecast based on trend 7616 by the seasonal index (0.93).
+
+**Cyclical Component**: $Y_t = Trend_t \times Cyclical_t \times Seasonal_t \times Irregular_t$
+* The cyclical component, like the seasonal component, is expressed as a percentage of trend.
+
+# 18 Nonparametric Methods
+Learning Objectives
+
+1.	Learn the difference between parametric and nonparametric methods.
+
+2.	Know the advantages of nonparametric methods and when they are applicable.
+
+3.	Be able to use the sign test to conduct hypothesis tests about a median.
+
+4.	Learn how to use the sign test to test a hypothesis with matched samples.
+
+5.	Be able to use the Wilcoxon signed-rank test to test a hypothesis with matched samples and to test a hypothesis about the median of a symmetric population.
+
+6.	Be able to use the Mann–Whitney–Wilcoxon test for the comparison of two populations when using independent random samples from each population.
+
+7.	Be able to use the Kruskal–Wallis test for the comparison of k populations when using independent random samples from each population.
+
+8.	Be able to compute the Spearman rank-correlation coefficient and test for a significant rank correlation for two variables that use ordinal or rank-ordered data.
+
+
+**Parametric methods**: These methods begin with an assumption about the probability distribution of the population which is often that the population has a normal distribution. Based on this assumption,  statisticians are able to derive the sampling distribution that can be used to make inferences about one or more parameters of the population, such as the population mean μ or the population standard deviation σ. 
+
+In this chapter we present **nonparametric methods** which can be used to make inferences about a population without requiring an assumption about the specific form of the population’s probability distribution. For this reason, these nonparametric methods are also called **distribution-free methods**.
+
+Most of the statistical methods referred to as parametric methods require quantitative data, whereas nonparametric methods allow inferences based on either categorical or quantitative data. However, the computations used in the nonparametric methods are generally done with categorical data. Whenever the data are quantitative, we will transform the data into categorical data in order to conduct the nonparametric test. 
+
+## 18.1 Sign Test
+The sign test is a versatile nonparametric method for hypothesis testing that uses the binomial distribution with $p = 0.5$ as the sampling distribution.
+
+### Hypothesis Test About a Population Median
+If we consider a population where no data value is exactly equal to the median, the median is the measure of central tendency that divides the population so that 50% of the values are greater than the median and 50% of the values are less than the median.
+
+Observations equal to the hypothesized value are discarded and the analysis proceeds with the observations having either a plus sign or a minus sign.
+
+$H_0: Median = 450$<br>
+$H_a: Median \ne 450$
+
+can be converted to <br>
+$H_0: p = .5$<br>
+$H_a: p \ne .5$
+
+The application we have just described used Excel’s BINOM.DIST function to compute the binomial probabilities required to obtain the p-value. With larger sample sizes, the normal distribution approximation of the binomial distribution can also be used to compute the p-value. A large sample application of the sign test is illustrated in the following example.
+
+Since we are using a two-tailed hypothesis test, this upper tail probability is doubled to obtain the final probability. Using Excel’s BINOM.DIST to compute the binomial probabilitites wth $n$ and $p$.
+
+### Normal Approximation of the Sampling Distribution of the Number of Plus Signs When $H_0: p = .5$
+Mean: $\mu = .5n$
+<br> Standard Deviation: $\sigma = \sqrt{.25n}$
+<br> Distribution form: Approximation normal for $n > 20$
+
+Let us now use the normal distribution to approximate the binomial probability of 22 or fewer plus signs. Before we proceed, remember that the binomial probability distribution is discrete and the normal probability distribution is continuous. To account for this, the binomial probability of 22 is computed by the normal probability interval 21.5 to 22.5. The .5 added to and subtracted from 22 is called the continuity correction factor.
+
+Thus to compute the p-value for 22 or fewer plus signs we use the **normal distribution** wiht above $\mu$ and $\sigma$. <br>
+p-value = $P(x \le 22.5) = P(z \le (22.5-30)/3.873) = P(z \le -1.94)$<br>
+Using Exel's NORM.S.DIST function, the cumulative probability for z=1.94 is .02
+
+E.g. Since the observed number of plus signs for the sample data, 7, is in the upper tail of the binomial distribution, we begin by computing the probability of obtaining 7 or more plus signs. 
+
+In general, when the population is not symmetrical, the nonparametric sign test for the population median is the more appropriate statistical test.
+
+### Hypothesis Test with Matched Samples
+In Chapter 10, we introduced a matched-sample experimental design where each of n experimental units provided a pair of observations, one from population 1 and one from population 2. Using quantitative data and assuming that the differences between the pairs of matched observations were normally distributed, the t distribution was used to make an inference about the difference between the means of the two populations.
+
+Step1:  If the individual selected Citrus Valley as the more preferred, a plus sign was recorded. If the individual selected Tropical Orange as the more preferred, a minus sign was recorded. If the individual was unable to express a difference in preference for the two products, no sign was recorded.
+
+Step2: Deleting the two individuals who could not express a preference for either brand, the data have been converted to a sign test with 2 plus signs and 10 minus signs for the 
+
+Step3: 
+
+This type of matched-sample design occurs in market research when a sample of n potential customers is asked to compare two brands of a product such as coffee, soft drinks, or detergents. 
+
+Letting $p$ indicate the proportion of the population of customers who prefer Citrus Valley orange juice, we want to test the hypotheses that there is no difference between the preferences for the two brands as follows:
+<br>$H_0: p = .5$
+<br>$H_a: p \ne .5$
+<br>If $H_0$ cannot be rejected, we cannot conclude that there is a difference in preference for the two brands. 
+
+Using Excel’s BINOM.DIST function, we obtain the binomial probabilities for the number of plus signs. 
+E.g. Under the assumption $H_0$ is true, we would expect $.5n$ plus signs. With only two plus signs in the sample, the results are in the lower tail of the binomial distribution. To compute the p-value for this two-tailed test, we first compute the probability of 2 or fewer plus signs and then double this value. Using the binomial probabilities of 0, 1, and 2, the p-value is 2 times the p(x<=2)
+
+Similar to other uses of the sign test, one-tailed tests may be used depending upon the application.
+
+**continuity correction factor**
+To account for this, the binomial probability of 22 is computed by the normal probability interval 21.5 to 22.5. The .5 added to and subtracted from 22 is called the continuity correction factor. 
+
+Using this normal distribution, we compute the p-value as follows:<br>
+p-value = P(x $\le$ 22.5) = P(z $\le \frac{(22.5-30)}{3.873}$) = P(z $\le$ -1.94)
+
+**Lower Tail p-Values**
+p-value = BINOM.DIST(plusSigns, Trials, .5, True)
+* plusSigns = the # of plus signs in the sign test
+* trials = the total # of plus and minus signs in the sign test
+
+**Upper Tail p-values**
+p-value = 1-BINOM.DIST(PlushSigns-1, Trials, .5, True)
+* Since the binomial distribution is discrete, plusSigns - 1 is used in the uppertail probability.
+
+**Two-Tailed p-values**
+We have 7 plus signs and 3 minus signs for the sample of 10 stores. The number of plus signs is in the upper tail, so we compute: p-value(UpperTail) = 1 - BINOM.DIST(PlusSigns-1, Trials, .5, True) => p-value = 2*p-value(UpperTail)
+
+## 18.2 Wilcoxon Signed-Rank Test
+The Wilcoxon signed-rank test is a nonparametric procedure for analyzing data from a matched-sample experiment. It only requires the assumption that the differences between the paired observations have a symmetric distribution. This occurs whenever the shapes of the two populations are the same and the focus is on determining if there is a difference between the medians of the two populations
+
+The hypotheses are as follows:
+<br> $H_0$: Median for method A - Median for method B = 0
+<br> $H_a$: Median for method A - Median for method B $\ne$ 0
+
+Differences of 0 are discarded and the analysis continues with the smaller sample size involving the nonzero differences. Ties among absolute differences are assigned the average of their ranks.
+
+Step1: Compute the difference and absolute difference between the pairs, Differences of 0 are discarded and the analysis continues with the smaller sample size involving the nonzero differences.
+
+Step2: Rank the difference absolute values, Ties among absolute differences are assigned the average of their ranks.
+
+Step3: Set up the Signed ranks, and get the sum of positive signed ranks as test statistics
+
+Sampling Distribution of $T^+$ for the Wilcoxon Signed-Rank Test can be approximated by a **normal distribution** as follows:
+<br>Mean: $\mu_{T^+} = \frac{n(n+1)}{4}$
+<br>STD: $\sigma_{T^+} = \sqrt{\frac{n(n+1)(2n+1)}{24}}$
+* Distribution form: approximately normal for $n \ge 10$
+
+If the test statistics $T^+$ is in the upper tail of the sampling distribution, we begin by computing the upper tail probability $P(T^+ \ge 49.5)$.
+* Since the sum of the potsitive ranks  $T^+$ is discrete and the **normal correction factor**=.5, thus the discrete probability $P(T^+ \ge 49.5)$ is approximately by the normal probability interal 49 to 50. $P(T^+ \ge 49.5)$ = $P(z \ge \frac{49 - \mu_{T^+}}{\sigma_{T^+}})$.
+
+If the test statistics $T^+$ is in the lower tail of the sampling distribution, we begin by computing the upper tail probability $P(T^+ \le 49.5)$ = $P(T^+ \le 49.5)$ = $P(z \le \frac{50 - \mu_{T^+}}{\sigma_{T^+}})$
+
+Using Excel's NOMR.S.DIST function, the cumulative probability for z = 2.19 is .9857; thus the p-value = 2(1-.9857) = .0286
+
+## 18.3 Mann–Whitney–Wilcoxon Test
+Advantages of this nonparametric procedure are that it can be used with either ordinal data or quantitative data and it does not require the assumption that the populations have a normal distribution. Versions of the test were developed jointly by Mann and Whitney and also by Wilcoxon. 
+
+MWW Hypothesis Test is :<br>
+$H_0$: The two populations are identical
+$H_a$: The two populations are not identical
+
+
+Step1: The Kruskal–Wallis test statistic uses the sum of the ranks for the three samples and is computed as follows.
+
+Step2: The next step in the MWW procedure is to rank the combined samples from low to high. 
+
+Step3: Next we sum the ranks for each sample as shown in Table 18.9. The MWW procedure may use the sum of the ranks for either sample. 
+
+
+**Sampling Distribution of W with Identical Populations**
+<br>Mean: $\mu_W = (1/2)n_1(n_1 + n_2 + 1)$
+<br>STD: $\sigma_W = \sqrt{(1/12)n_1 n_2 (n_1 + n_2 + 1)}$
+* Distribution form: approximately normal provided $n_1 \ge 7$ and $n_2 \ge 7$
+
+Let us proceed with the MWW test and use a .05 level of significance to draw a conclusion. Since the test statistic W is discrete and the normal distribution is continuous, we will again use the continuity correction factor for the normal distribution approximation. With 
+𝑊=169.5 in the upper tail of the sampling distribution, we have the following p-value calculation:<br>
+$P(W \ge 169.5) = P(z \ge \frac{169 - 138}{15.1658}) = P(z \ge 2.04)$
+
+As a final comment, some applications of the MWW test make it appropriate to assume that the two populations have identical shapes and if the populations differ, it is only by a shift in the location of the distributions.If the two populations have the same shape, the hypothesis test may be stated in terms of the difference between the two population medians.
+
+## 18.4 Kruskal–Wallis Test
+The nonparametric Kruskal–Wallis test is based on the analysis of independent random samples from each of k populations. This procedure can be used with either ordinal data or quantitative data and does not require the assumption that the populations have normal distributions. The general form of the null and alternative hypotheses is as follows:
+<br>$H_0$: All populations are identical
+<br>$H_a$: Not all populations are identical
+
+Step1: The first step in the Kruskal–Wallis procedure is to rank the combined samples from lowest to highest values.
+* the rank is from 1 to n, if encountering same value, then get the average
+
+Step2: The Kruskal–Wallis test statistic uses the sum of the ranks for the three samples and is computed as follows.
+<br> $H = [\frac{12}{n_T(n_T+1)}\sum_{i=1}^k{\frac{R_i^2}{n_i}}] - 3 (n_T + 1)$
+* $k$ = the # of populations
+* $n_i$ = the # of observations in sample $i$
+* $n_T = \sum_{i=1}^k{n_i}$ = the total # of observations in all samples
+* $R_i$ = the sum of the ranks for sample i
+
+Kruskal and Wallis were able to show that, under the null hypothesis assumption of identical populations, the sampling distribution of H can be approximated by a **chi-square distribution with (k − 1) degrees of freedom**. This approximation is generally acceptable if the sample sizes for each of the k populations are all greater than or equal to five. As a result, the Kruskal–Wallis test is always expressed as an upper tail test.  
+
+As it's a F chi-square distribution for mulitple population comparison, p(H) = CHISQ.DIST.RT(df, test statistic) = 0.0116
+* df = k - 1 where k is the # of populations
+
+If the k populations are assumed to have the same shape, the hypothesis test can be stated in terms of the population medians. In this case, the hypotheses for the Kruskal–Wallis test would be written as follows:<br>
+$H_0$: Median1 = Median2 = ... = Mediank
+$H_a$: Not all Medians are equal
+
+## 18.5 Rank Correlation
+ The Spearman rank-correlation coefficient, we provide a correlation measure of association between two variables when ordinal or rank-ordered data are available.
+ 
+ **Spearman rank-correlation coefficient**: $r_s = 1 - \frac{6\sum_{t=1}^nd_i^2}{n(n^2-1)}$
+ * where n = the # of observations in the sample
+ * $x_i$ = the rank if observation i with respect to the first variable
+ * $y_i$ = the rank of observation i with respect to the second variable
+ * $d_i = x_i - y_i$
+
+Step1: After the review, the director ranked the 10 individuals in terms of their potential for success at the time of employment and assigned the individual who had the most potential the rank of 1. 
+
+Step2: On the basis of the actual sales records, a second ranking of the 10 individuals based on sales performance was obtained.
+
+Step3: then We first compute the difference between the two ranks for each salesperson, $d_i$, as shown in column 4. The sum of $d_i^2$ in column 5 is 44.
+
+Step4: compute the coefficient based on above formula
+
+Step5: Conclusion
+
+The Spearman rank-correlation coefficient ranges from −1.0 to +1.0 and its interpretation is similar to the Pearson product moment correlation coefficient for quantitative data.
+* A rank-correlation coefficient near +1.0 indicates a strong positive association between the ranks for the two variables, 
+* A rank-correlation coefficient near −1.0 indicates a strong negative association between the ranks for the two variables. 
+* A rank-correlation coefficient of 0 indicates no association between the ranks for the two variables.
+
+At this point, we may want to use the sample rank correlation $r_s$ to make an inference about the population rank correlation coefficient $\rho_s$:<br>
+$H_0: \rho_s = 0$<br>
+$H_a: \rho_s \ne 0$<br>
+
+Sampling Distribution of $r_s$, <br>
+Mean: $\mu_{r_s} = 0$<br>
+STD: $\sigma_{r_s} = \sqrt{1/(n-1)}$
+
+With the sampling distribution of $r_s$ approximated by a normal distribution, the standard normal random variable z becomes the test statistic with $z = \frac{r_s - \mu_{r_s}}{\sigma_{r_s}}$. Using Excel’s NORM.S.DIST function, the cumulative probability for $z$, the p-value for two-tail test is 2*p-value. If null hypothesis is rejected, it means there is strong positive rank correlation.
+
+Using Excel: Data -> Data Analysis -> Correlation -> B1:C11
