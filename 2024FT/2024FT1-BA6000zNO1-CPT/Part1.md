@@ -115,3 +115,18 @@ a.2.5
 b.3.0
 c.2.75
 d.3.5
+
+### 21 Select which RCL reason allows students to still engage in CPT. (A)
+
+a.Last Semester
+b.Medical RCL
+c.Difficulty with American Teaching Methods
+d.Academic Difficulty
+
+
+### 22 When does a student need to re-apply for CPT authorization? C
+
+a.Supervisor Change
+b.New Work Address
+c.To Extend Employment After 12 Months
+d.Pay Raise

@@ -1969,3 +1969,141 @@ STD: $\sigma_{r_s} = \sqrt{1/(n-1)}$
 With the sampling distribution of $r_s$ approximated by a normal distribution, the standard normal random variable z becomes the test statistic with $z = \frac{r_s - \mu_{r_s}}{\sigma_{r_s}}$. Using Excel’s NORM.S.DIST function, the cumulative probability for $z$, the p-value for two-tail test is 2*p-value. If null hypothesis is rejected, it means there is strong positive rank correlation.
 
 Using Excel: Data -> Data Analysis -> Correlation -> B1:C11
+
+# 20 Decision Analysis
+Learning Objectives
+
+1.	Learn how to describe a problem situation in terms of decisions to be made, chance events, and consequences.
+
+2.	Understand how the decision alternatives and chance outcomes are combined to generate the consequence.
+
+3.	Be able to analyze a simple decision analysis problem from both a payoff table and decision tree point of view.
+
+4.	Be able to determine the potential value of additional information.
+
+5.	Learn how new information and revised probability values can be used in the decision analysis approach to problem solving.
+
+6.	Understand what a decision strategy is.
+
+7.	Learn how to evaluate the contribution and efficiency of additional decision-making information.
+
+8.	Be able to use a Bayesian approach to computing revised probabilities.
+
+9.	Understand the following terms:
+
+decision alternatives	expected value of perfect information (EVPI)
+consequence chance event	decision strategy
+states of nature	expected value of sample information (EVSI)
+payoff table	Bayesian revision
+decision tree	prior probabilities
+expected value approach	posterior probabilities
+
+## 20.1 Problem Formulation
+First Step
+* begin a verbal statement of the problem, 
+* identify the decision alternatives, the uncertain future events as **chance events**,
+* the consequences associated with each decision alternative and each chance event outcome,
+
+**States of nature**: the possible outcomes for a chance event. E.g.<br>
+$s1$ = strong demand for the condominiums<br>
+$s2$ = weak demand for the condominiums
+
+Management must first select a decision alternative (complex size), then a state of nature 
+follows (demand for the condominiums), and finally a consequence will occur. 
+
+### PayOff Table 
+**Payoff**: the consequence resulting from a specific combination of a decision alternative and a state of nature
+A table showing payoffs for all combinations of decision alternatives and states of nature is a payoff table.
+
+$V_{ij}$: the payoff associated with decision alternative i and state of nature j.
+
+### Decision tree
+A decision tree graphically shows the sequential nature of the decision-making process. First, PDC must make a 
+decision regarding the size of the condominium complex (d1, d2, d3). Then, after the decision is implemented, 
+either state of nature $s1$ or $s2$ will occur. The number at each end point of the tree indicates the payoff 
+associated with a particular sequence. 
+
+**Node**: numbered 1–4, that represent the decisions and chance events.
+* Squares are used to depict decision nodes and circles are used to depict chance nodes. 
+
+## 20.2 Decision Making with Probabilities
+Once we define the decision alternatives and the states of nature for the chance events, we can focus on 
+determining probabilities for the states of nature. The classical method, the relative frequency method, or 
+the subjective method of assigning probabilities may be used to identify these probabilities. 
+
+### **Expected Value Approach**
+It's to identify the best decision alternative for the problem. <br>
+$N$ = the # of states of nature <br>
+$P(s_j)$ = the probability of state of nature $s_j$
+
+Assumptions
+* $P(s_j) \ge 0$, for all astates of nature 
+* $\sum_{j=1}^N P(s_j) = P(s_1) + P(s_2) + ... + P(s_N) = 1$
+
+The **Expected Value(EV)** of decision alternative $d_i$ is as follows: <br>
+$EV(d_i) = \sum_{j=1}^N P(s_j)V_{ij}$
+* where $V_{ij}$ = the value of the payoff for decision alternative $d_i$ and state of nature $s_j$
+
+The calculations required to identify the decision alternative with the best expected value can be conveniently 
+carried out on a decision tree.
+
+### Expected Value of Perfect Information
+Suppose that PDC has the opportunity to conduct a market research study that would help evaluate buyer interest 
+in the condominium project and provide information that management could use to improve the probability 
+assessments for the states of nature.
+
+**Perfect Information**<br>
+To determine the potential value of this information, we begin by supposing that the study could provide 
+*perfect information* regarding the states of nature; that is, we assume for the moment that PDC could determine
+ with certainty, prior to making a decision, which state of nature is going to occur. E.g.
+<br> If $s1$, select $d_3$ and receive a payoff of $20$ million;
+<br> If $s2$, select $d_1$ and receive a payoff of $7$ million;
+
+The $EV = P(s_1) * V_{31} + P(s_2)*V_{12} = 17.4$, which is $3.2million difference with the Expected value without
+perfect information (**EVwoPI**).
+
+**Expected Value of Perfect Information**: EVPI = |EVwPI - EVwoPI|
+
+## 20.3 Decision Anaysis with Sample Information 
+Frequently, decision makers have preliminary or prior probability assessments for the states of nature that are
+the best probability values available at that time. However, to make the best possible decision, the decision 
+maker may want to seek additional information about the states of nature. This new information can be used to 
+revise or update the prior probabilities so that the final decision is based on more accurate probabilities
+ for the states of nature.
+
+**Posterior probabilities**: the revised probabilities after market researching.
+
+Management anticipates the market research study will provide one of the following two results: 
+1. Favorable report: A significant number of the individuals contacted express interest in purchasing a PDC 
+condominium.
+2. Unfavorable report: Very few of the individuals contacted express interest in purchasing a PDC condominium.
+
+Decision Tree Diagram:
+* the squares are decision nodes and the circles are chance nodes. 
+* At each decision node, the branch of the tree that is taken is based on the decision made.
+* At each chance node, the branch of the tree that is taken is based on probability or chance.
+
+### Decision Strategy
+A decision strategy is a sequence of decisions and chance outcomes where the decisions chosen depend on the 
+yet to be determined outcomes of chance events. The approach used to determine the optimal decision strategy
+ is based on a backward pass through the decision tree using the following steps:<br>
+1. At chance nodes, compute the expected value by multiplying the payoff at the end of each branch by the
+	corresponding branch probability.
+2. At decision nodes, select the decision branch that leads to the best expected value. This expected value 
+	becomes the expected value at the decision node.
+
+e.g. The optimal decision for PDC is to conduct the market research study and then carry out the following decision strategy:
+
+* If the market research is favorable, construct the large condominium complex.
+* If the market research is unfavorable, construct the medium condominium complex.
+
+**Expected Value of Sample Information**: EVSI = |EVwSI - EVwoSI|
+
+## 20.4 Computing Branch Probabilities Using Bayes' Theorem 
+the branch probabilities for the PDC decision tree chance nodes were specified in the problem description. 
+No computations were required to determine these probabilities. In this section we show how Bayes’ theorem 
+can be used to compute branch probabilities for decision trees.
+
+* P(s1) and P(s2) are prior probabilities, and P(s1|F) and P(s2|F) are called posterior probabilities. 
+To get P(s1|F) and P(s2|F), we need to know conditional probabilities: P(F|s1), P(F|s2) and P(U|s2), P(U|s1).
+

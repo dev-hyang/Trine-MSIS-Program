@@ -69,29 +69,29 @@ Tabular and Graphical Displays
 
 # Week 6:
 * Due Thursday 11:59 PM EST
-o Discussion Forum 6, Initial Post
+[x] Discussion Forum 6, Initial Post
 * Due Sunday by 11:59 PM EST
-o Two replies, Discussion Forum 6
-o MindTap Chapter 15 Assignment: Multiple Regression
-o MindTap Chapter 16 Assignment: Regression Analysis: Model Building
-o MindTap Chapter 15 Quiz: Multiple Regression
-o MindTap Chapter 16 Quiz: Regression Analysis: Model Building
+[x] Two replies, Discussion Forum 6
+[x] MindTap Chapter 15 Assignment: Multiple Regression
+[x] MindTap Chapter 16 Assignment: Regression Analysis: Model Building
+[x] MindTap Chapter 15 Quiz: Multiple Regression
+[x] MindTap Chapter 16 Quiz: Regression Analysis: Model Building
 
 # Week 7:
 * Due Thursday at 11:59 PM EST
-o Discussion Forum 7, Initial Post
+[x] Discussion Forum 7, Initial Post
 * Due Sunday by 11:59 PM EST
-o Two replies, Discussion Forum 7
-o MindTap Chapter 17 Assignment: Time Series Analysis and Forecasting
-o MindTap Chapter 18 Assignment: Nonparametric Methods
-o MindTap Chapter 17 Quiz: Time Series Analysis and Forecasting
-o MindTap Chapter 18 Quiz: Nonparametric Methods
+[x] Two replies, Discussion Forum 7
+[x] MindTap Chapter 17 Assignment: Time Series Analysis and Forecasting
+[x] MindTap Chapter 18 Assignment: Nonparametric Methods
+[x] MindTap Chapter 17 Quiz: Time Series Analysis and Forecasting
+[x] MindTap Chapter 18 Quiz: Nonparametric Methods
 
 # Week 8: Work due by Saturday at 11:59 PM EST
 * Due Thursday 11:59 PM EST
-o Discussion Forum 8, Initial Post
+[x] Discussion Forum 8, Initial Post
 * Due Saturday by 11:59 PM EST
-o Two replies, Discussion Forum 8
-o MindTap Chapter 20 Assignment: Decision Analysis
-o MindTap Chapter 20 Quiz: Decision Analysis
-o MindTap Exam 2 over chapters 10 – 18, 20
+[x] Two replies, Discussion Forum 8
+[x] MindTap Chapter 20 Assignment: Decision Analysis
+[x] MindTap Chapter 20 Quiz: Decision Analysis
+[x] MindTap Exam 2 over chapters 10 – 18, 20
